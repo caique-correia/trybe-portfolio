@@ -1,0 +1,167 @@
+/*Part#1*/
+
+.caixa {
+  color: white;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.width-and-height {
+  height: 50px;
+  width: 50px;
+}
+
+/* insira na classe abaixo um padding de 20px para aplicá-lo aos itens B, C e D */
+.padding {
+  padding: 20px;
+}
+
+/* insira na classe abaixo uma margem de 30px para aplicá-la aos itens C e D */
+.margin {
+  margin: 30px;
+}
+
+/* insira na classe abaixo uma borda com valor '5px solid black' para aplicá-la ao item D */
+.border {
+  border: 5px;
+  border-style: solid;
+  color: black;
+
+}
+
+/*Part#2*/
+
+.super-mario {
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+  top: 220px;
+  left: 130px;
+
+}
+
+.goomba {
+  width: 65px;
+  position: absolute;
+  z-index: 2;
+  top: 350px;
+  left: 200px;
+}
+
+.baloon {
+  width: 180px;
+  position: absolute;
+  z-index: 3;
+  top: 180px;
+  left: 350px;
+
+}
+
+.bowser {
+  width: 300px;
+  position: absolute;
+  z-index: 3;
+  top: 210px;
+  left: 500px;
+}
+
+.speech {
+  font-size: 20px;
+  position: absolute;
+  z-index: 4;
+  top: 180px;
+  left: 380px;
+
+}
+
+/*Part#3*/
+
+.part3 h1,
+.part3 p {
+  text-align: center;
+}
+
+.part3 li:hover {
+  background-color: aqua;
+  transition: 750ms;
+}
+
+.part3 li:active {
+  font-family: 'Courier New', Courier, monospace;
+  color: green
+}
+
+.part3 ul,
+.part3 ol {
+  list-style: none;
+}
+
+/*Part#3.2: Incompleto*/
+
+div:hover {
+  border: 1px;
+  border-color: aqua;
+}
+
+/*Part#4*/
+
+.part4 ol {
+  background-color: yellow
+}
+
+.part4 ol li:nth-of-type(even) {
+  color: green;
+}
+
+.part4 ol li:nth-of-type(odd) {
+  text-transform: uppercase;
+}
+
+
+.part4 h1,
+.part4 h2,
+.part4 h3,
+.part4 h4,
+.part4 h5,
+.part4 h6 {
+  color: red;
+}
+
+.part4 h1 em,
+.part4 h2 em,
+.part4 h3 em,
+.part4 h4 em,
+.part4 h5 em,
+.part4 h6 em {
+  font-size: 40px;
+  border: solid 1px;
+  border-color: black;
+}
+
+.part4 li {
+  font-size: 20px;
+}
+
+.part4 li em {
+  font-weight: bold;
+}
+
+.part4 ul li:nth-last-child(n+3) {
+  color: blue;
+}
+
+/*
+
+.part4 ul li *java {
+  background-color: aqua;
+}
+
+
+
+.part4 ul li:link {
+  background-color: red;
+}
+
+*/
