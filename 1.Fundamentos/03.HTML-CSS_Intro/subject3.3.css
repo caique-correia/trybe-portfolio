@@ -158,5 +158,10 @@ div:hover {
   background-color: aqua;
 }
 
-*/
 
+
+.part4 ul li:link {
+  background-color: red;
+}
+
+*/
