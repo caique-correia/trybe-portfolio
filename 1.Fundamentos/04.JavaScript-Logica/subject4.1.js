@@ -30,13 +30,35 @@ const perimeter = 2 * (base + height);
 const score = 72;
 
 if (score >= 80) {
-console.log('Parabéns, você foi aprovado(a)');
+// console.log('Parabéns, você foi aprovado(a)');
 } else if (score < 80 && score >= 60) {
-    console.log('Você está na nossa lista de espera');
+    // console.log('Você está na nossa lista de espera');
 } else if (score < 60) {
-    console.log('Você foi reprovado(a)');
+    // console.log('Você foi reprovado(a)');
 } else {
-    console.log(ERROR);
+    // console.log(ERROR);
 };
 
 // OPERADORES LÓGICOS;
+const comida = 'pão na chapa';
+const bebida = 'cafezinho';
+
+if (bebida === 'cafezinho' && comida === 'pão na chapa') {
+  // console.log('Muito obrigado pela refeição :)');
+} else {
+  // console.log('Acho que houve um engano com meu pedido');
+}
+
+
+const bebidaPrincipal =  'cafezinho';
+const bebidaAlternativa = 'suco de laranja';
+
+if (bebidaPrincipal === 'cafezinho' || bebidaAlternativa === 'suco de laranja') {
+  // console.log("Obrigado por me atender :D")
+} else {
+  // console.log("Ei, eu não pedi isso!");
+}
+
+// SWITCH AND CASE;
+
+
