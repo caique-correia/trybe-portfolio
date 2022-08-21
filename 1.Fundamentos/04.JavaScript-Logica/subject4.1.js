@@ -30,13 +30,13 @@ const perimeter = 2 * (base + height);
 const score = 72;
 
 if (score >= 80) {
-// console.log('Parabéns, você foi aprovado(a)');
+  // console.log('Parabéns, você foi aprovado(a)');
 } else if (score < 80 && score >= 60) {
-    // console.log('Você está na nossa lista de espera');
+  // console.log('Você está na nossa lista de espera');
 } else if (score < 60) {
-    // console.log('Você foi reprovado(a)');
+  // console.log('Você foi reprovado(a)');
 } else {
-    // console.log(ERROR);
+  // console.log(ERROR);
 };
 
 // OPERADORES LÓGICOS;
@@ -50,7 +50,7 @@ if (bebida === 'cafezinho' && comida === 'pão na chapa') {
 }
 
 
-const bebidaPrincipal =  'cafezinho';
+const bebidaPrincipal = 'cafezinho';
 const bebidaAlternativa = 'suco de laranja';
 
 if (bebidaPrincipal === 'cafezinho' || bebidaAlternativa === 'suco de laranja') {
@@ -60,5 +60,65 @@ if (bebidaPrincipal === 'cafezinho' || bebidaAlternativa === 'suco de laranja') 
 }
 
 // SWITCH AND CASE;
+let faixaEtaria = 'idoso';
+
+switch (faixaEtaria) {
+  case 'adolescente':
+    // console.log('Consulte a classificação do filme');
+    break;
+  case 'adulto':
+    // console.log('A pessoa adulta é classificada para assistir qualquer filme');
+    break;
+  case 'idoso':
+    // console.log('A pessoa idosa é classificada para assistir qualquer filme');
+    break;
+  default:
+  // console.log('só pode assistir filmes livres');
+}
 
 
+
+mes = 'Trybe';
+let estacaoDoAno = '?';
+
+switch (mes) {
+  case 'janeiro':
+  case 'fevereiro':
+  case 'março':
+    estacaoDoAno = 'Verão';
+    break;
+  case 'abril':
+  case 'maio':
+  case 'junho':
+    estacaoDoAno = 'Outono';
+    break;
+  case 'julho':
+  case 'agosto':
+  case 'setembro':
+    estacaoDoAno = 'Inverno';
+    break;
+  case 'outubro':
+  case 'novembro':
+  case 'dezembro':
+    estacaoDoAno = 'Primavera';
+}
+
+// console.log(estacaoDoAno); // 'Outono'
+
+
+let state = 'aprovada';
+let report = 'não se aplica';
+
+switch (state) {
+  case 'aprovada':
+    report = 'aprovada';
+    break;
+  case 'lista':
+    report = 'lista';
+    break;
+  case 'reprovada':
+    report = 'reprovada';
+    break;
+}
+
+console.log(report);
