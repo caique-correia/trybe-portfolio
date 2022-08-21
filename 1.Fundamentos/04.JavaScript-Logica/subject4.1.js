@@ -121,4 +121,149 @@ switch (state) {
     break;
 }
 
-console.log(report);
+// console.log(report);
+
+// AGORA À PRÁTICA!
+let a = 12;
+let b = 4;
+let c = 3;
+let operators = [];
+let biggerOfTwo = 'undefined';
+let biggerOfThree = 'undefined';
+let tendency = 'undefined';
+let triangle = 'undefined';
+let chessInput = 'Rook';
+let chessOutput = 'undefined';
+let scoreInput = 70
+let scoreOutput = 'undefined';
+let evenOutput = 'undefined';
+let oddOutput = 'undefined';
+let priceOutput = 'undefined';
+const priceBuy = 10;
+const priceSell = 20;
+
+
+
+operators.push(a + b);
+operators.push(a - b);
+operators.push(a * b);
+operators.push(a / b);
+operators.push(a % b);
+
+switch (true) {
+  case a > b:
+    biggerOfTwo = 'a is bigger';
+    break;
+  case a < b:
+    biggerOfTwo = 'b is bigger';
+}
+
+switch (true) {
+  case a > b:
+    switch (true) {
+      case a > c:
+        biggerOfThree = 'a is bigger';
+        break
+      case a < c:
+        biggerOfThree = 'c is bigger';
+    } break;
+  case a < b:
+    switch (true) {
+      case b > c:
+        biggerOfThree = 'b is bigger';
+        break;
+      case b < c:
+        biggerOfThree = 'c is bigger';
+    }
+}
+
+
+switch (true) {
+  case a > 0:
+    tendency = 'positive';
+    break;
+  case a < 0:
+    tendency = 'negative';
+    break;
+  case a == 0:
+    tendency = 'zero';
+}
+
+
+switch (true) {
+  case (a + b + c) === 180:
+    triangle = 'this can be a triangle';
+    break;
+  case (a + b + c) > 180 || (a + b + c) < 180:
+    triangle = 'this can NOT be a triangle'
+}
+
+
+switch (chessInput.toLowerCase()) {
+  case 'pawn':
+  case 'rook':
+    chessOutput = 'Vertical and Horizontal';
+    break;
+  case 'bishop':
+    chessOutput = 'Diagonals';
+    break;
+  case 'knight':
+    chessOutput = 'L shape';
+    break;
+  case 'queen':
+  case 'king':
+    chessOutput = 'Vertical, Horizontal and Diagonals';
+    break;
+  default:
+    chessOutput = 'Unidentifiable piece';
+}
+
+
+switch (true) {
+  case scoreInput > 100 || scoreInput < 0:
+    scoreOutput = 'Invalid Score!'
+  case scoreInput >= 90:
+    scoreOutput = 'A';
+    break;
+  case scoreInput >= 80:
+    scoreOutput = 'B';
+    break;
+  case scoreInput >= 70:
+    scoreOutput = 'B';
+    break;
+  case scoreInput >= 60:
+    scoreOutput = 'B';
+    break;
+  case scoreInput >= 50:
+    scoreOutput = 'B';
+    break;
+  case scoreInput >= 0:
+    scoreOutput = 'B';
+}
+
+
+if (a % 2 === 0 || b % 2 === 0 || c % 2 === 0) {
+  evenOutput = true;
+} else {
+  evenOutput = false;
+}
+
+
+if (a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0) {
+  oddOutput = true;
+} else {
+  oddOutput = false;
+}
+
+
+
+// console.log(operators);
+// console.log(biggerOfTwo);
+// console.log(biggerOfThree);
+// console.log(tendency);
+// console.log(triangle);
+// console.log(chessOutput);
+// console.log(scoreOutput);
+// console.log(evenOutput);
+// console.log(oddOutput);
+
