@@ -143,7 +143,6 @@ const priceBuy = 10;
 const priceSell = 20;
 
 
-
 operators.push(a + b);
 operators.push(a - b);
 operators.push(a * b);
@@ -255,15 +254,22 @@ if (a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0) {
   oddOutput = false;
 }
 
+priceSell - priceBuy * 1.2
+switch (true) {
+  case priceSell < 0 || priceBuy < 0:
+    priceOutput = 'Negative value(s) unaccepted';
+    break;
+  case priceSell > 0 && priceBuy > 0:
+    priceOutput = priceSell - priceBuy * 1.2;
+}
 
-
-// console.log(operators);
-// console.log(biggerOfTwo);
-// console.log(biggerOfThree);
-// console.log(tendency);
-// console.log(triangle);
-// console.log(chessOutput);
-// console.log(scoreOutput);
-// console.log(evenOutput);
-// console.log(oddOutput);
-
+console.log(operators);
+console.log(biggerOfTwo);
+console.log(biggerOfThree);
+console.log(tendency);
+console.log(triangle);
+console.log(chessOutput);
+console.log(scoreOutput);
+console.log(evenOutput);
+console.log(oddOutput);
+console.log(priceOutput);
