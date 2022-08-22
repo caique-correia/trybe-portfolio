@@ -114,3 +114,26 @@ for (i = 0; i < 25; i += 1) {
 // console.log(oddNumbers);
 // console.log(underplace);
 
+
+// BÔNUS!!!
+let numbersB = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let numbersC = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let copyB = [];
+
+for (let index = 1; index < numbersB.length; index += 1) {
+  for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+    if (numbersB[index] > numbersB[secondIndex]) {
+      let position = numbersB[index];
+      numbersB[index] = numbersB[secondIndex];
+      numbersB[secondIndex] = position;
+    }
+  }
+}
+
+
+for (let i = 1; i < numbersC.length; i += 1) {
+  copyB.push(numbersC[i] * numbersC[i - 1])
+}
+
+// console.log(numbersB);
+// console.log(copyB);
