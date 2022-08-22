@@ -263,13 +263,55 @@ switch (true) {
     priceOutput = priceSell - priceBuy * 1.2;
 }
 
-console.log(operators);
-console.log(biggerOfTwo);
-console.log(biggerOfThree);
-console.log(tendency);
-console.log(triangle);
-console.log(chessOutput);
-console.log(scoreOutput);
-console.log(evenOutput);
-console.log(oddOutput);
-console.log(priceOutput);
+// console.log(operators);
+// console.log(biggerOfTwo);
+// console.log(biggerOfThree);
+// console.log(tendency);
+// console.log(triangle);
+// console.log(chessOutput);
+// console.log(scoreOutput);
+// console.log(evenOutput);
+// console.log(oddOutput);
+// console.log(priceOutput);
+
+
+// INSS/IR SPECIFIC CASE;
+
+let grossSalary = 3000;
+let salaryINSS;
+let salaryIR;
+let netSalary;
+
+
+switch (true) {
+  case grossSalary >= 0 && grossSalary <= 1556.94:
+    salaryINSS = grossSalary * 0.92;
+    break;
+  case grossSalary <= 2594.92:
+    salaryINSS = grossSalary * 0.91;
+    break;
+  case grossSalary <= 5189.82:
+    salaryINSS = grossSalary * 0.89;
+    break;
+  case grossSalary > 5189.82:
+    salaryINSS = grossSalary - 570.88;
+}
+
+switch (true) {
+  case salaryINSS >= 0 && salaryINSS <= 1903.98:
+    salaryIR = salaryINSS;
+    break;
+  case salaryINSS <= 2826.65:
+    salaryIR = salaryINSS * 0.925 + 142.80;
+    break;
+  case salaryINSS <= 3751.05:
+    salaryIR = salaryINSS * 0.85 + 354.80;
+    break;
+  case salaryINSS <= 4664.68:
+    salaryIR = salaryINSS * 0.775 + 636.13;
+    break;
+  case salaryINSS > 4664.68:
+    salaryIR = salaryINSS * 0.725 + 869.36;
+}
+
+// console.log(salaryIR);
