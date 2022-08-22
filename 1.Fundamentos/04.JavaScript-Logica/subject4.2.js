@@ -43,8 +43,8 @@ while (d1 === d2) {
 // AGORA À PRÁTICA!
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let addition = 0;
-let media = 0;
-let mediaOutput = 'undefined';
+let average = 0;
+let averageOutput = 'undefined';
 let overplace = 0;
 let oddNumbers = 0;
 let underplace = 0;
@@ -58,14 +58,14 @@ for (i = 0; i < numbers.length; i += 1) {
   addition += numbers[i];
 }
 
-media = addition / numbers.length;
+average = addition / numbers.length;
 
 switch (true) {
-  case media > 20:
-    mediaOutput = 'value higher than 20';
+  case average > 20:
+    averageOutput = 'value higher than 20';
     break;
-  case media <= 20:
-    mediaOutput = 'value lower or equal to 20';
+  case average <= 20:
+    averageOutput = 'value lower or equal to 20';
 }
 
 
@@ -108,8 +108,8 @@ for (i = 0; i < 25; i += 1) {
 
 
 // console.log(addition);
-// console.log(media);
-// console.log(mediaOutput);
+// console.log(average);
+// console.log(averageOutput);
 // console.log(overplace);
 // console.log(oddNumbers);
 // console.log(underplace);
