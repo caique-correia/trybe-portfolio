@@ -102,6 +102,7 @@ console.log(length);
 
 // PRIME NUMBERS INTERVAL;
 let primeArray = [];
+let primeBigger = 0;
 
 for (let i = 1; i <= 50; i += 1) {
   let primeConfig = true
@@ -112,7 +113,11 @@ for (let i = 1; i <= 50; i += 1) {
     }
   }
   if (i > 1 && primeConfig === true) {
-    primeArray.push(i)
+    primeArray.push(i);
+    if (i > primeBigger) {
+      primeBigger = i;
+    }
   }
 }
 console.log(primeArray);
+console.log(primeBigger)
