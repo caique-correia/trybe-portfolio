@@ -119,5 +119,18 @@ for (let i = 1; i <= 50; i += 1) {
     }
   }
 }
-console.log(primeArray);
-console.log(primeBigger)
+// console.log(primeArray);
+// console.log(primeBigger);
+
+
+// BÔNUS!!!
+let vertex = '*';
+const edge = 5;
+
+for (let i = 0; i < edge; i += 1) {
+  let square = '';
+  for (let i = 0; i < edge; i += 1) {
+    square += vertex;
+  }
+  console.log(square);
+}
