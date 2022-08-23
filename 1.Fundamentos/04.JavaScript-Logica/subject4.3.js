@@ -76,7 +76,7 @@ for (let i = 0; i < array.length; i += 1) {
 console.log(length);
 
 
-// Números primos;
+// PRIME NUMBER INPUT;
 // let numberInput = 0;
 // let primeOutput = 'Prime!';
 
@@ -99,9 +99,11 @@ console.log(length);
 
 // console.log(primeOutput);
 
-let primeArray = [2];
 
-for (let i = 3; i <= 50; i += 1) {
+// PRIME NUMBERS INTERVAL;
+let primeArray = [];
+
+for (let i = 1; i <= 50; i += 1) {
   let primeConfig = true
   for (let j = 2; j < i; j += 1) {
     switch (true) {
@@ -113,4 +115,4 @@ for (let i = 3; i <= 50; i += 1) {
     primeArray.push(i)
   }
 }
-// console.log(primeArray);
+console.log(primeArray);
