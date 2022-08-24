@@ -151,6 +151,7 @@ leitor.livrosFavoritos.push({
 
 
 // PART II;
+// 01.;
 function palindromeCheck(word) {
   let flag = true;
   let drow = '';
@@ -162,5 +163,68 @@ function palindromeCheck(word) {
   return word == drow;
 }
 
-console.log(palindromeCheck('HZ'));
+// console.log(palindromeCheck('HH'));
 
+// 02.;
+function biggerNumber(numberArray) {
+  let numberCompare = numberArray[0];
+  for (let i in numberArray) {
+    if (numberArray[i] > numberCompare) {
+      numberCompare = numberArray[i];
+    }
+  }
+  return numberCompare
+}
+
+
+// 03.;
+function smallerNumber(numberArray) {
+  let numberCompare = numberArray[0];
+  for (let i in numberArray) {
+    if (numberArray[i] < numberCompare) {
+      numberCompare = numberArray[i];
+    }
+  }
+  return numberCompare
+}
+
+numberArray = [12, 4, 6, 7, 10, 0, -3];
+// console.log(biggerNumber(numberArray));
+// console.log(smallerNumber(numberArray));
+
+
+// 04.;
+function biggerString(stringArray) {
+  let stringCompare = stringArray[0];
+  for (let i in stringArray) {
+    if (stringArray[i].length > stringCompare.length) {
+      stringCompare = stringArray[i];
+    }
+  }
+  return stringCompare
+}
+
+let stringArray = ['Epaminondas', 'José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+// console.log(biggerString(stringArray));
+
+
+// 05.;
+function numberMode (modeArray) {
+  let modeCount = {};
+  let m = 0;
+  let w = '';
+  for (let i in modeArray) {
+    let n = modeArray[i];
+    if (!modeCount[n]) {
+      modeCount[n] = 0;
+    }
+    modeCount[n] += 1;
+    if (modeCount[n] > m) {
+      m = modeCount[n];
+      w = 'Número: ' + n + '; ' + 'Repetições: ' + m;
+    }
+  }
+  return w
+}
+
+console.log(numberMode([2, 3, 2, 5, 8, 2, 3]))
