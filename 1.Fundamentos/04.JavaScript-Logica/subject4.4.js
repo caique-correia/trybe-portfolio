@@ -85,3 +85,82 @@ for (let i in car) {
   // console.log(i, car[i]);
 }
 
+
+const trybeStudent = {
+  name: "Luiza",
+  class: 15,
+  favoriteSubject: "javascript",
+};
+
+
+// AGORA À PRÁTICA!;
+// PART I;
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+}
+
+info.recorrente = 'Sim';
+
+let info1 = {
+  personagem: 'Tio Patinhas',
+  origem: "Christmas on Bear Mountain, Dell's Four Color Comics #178",
+  nota: 'O último MacPatinhas',
+  recorrente: 'Sim'
+};
+
+// console.log(info);
+// console.log('Bem-vinda, ' + info.personagem);
+
+for (let i in info) {
+  switch (true) {
+    case info[i] != info1[i]:
+      // console.log(info[i] + ' e ' + info1[i]);
+      break;
+    default:
+    // console.log('Ambos Recorrentes');
+  }
+}
+
+
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+
+
+// console.log("O livro favorito de " + leitor.nome + ' ' + leitor.sobrenome + " se chama '" + leitor.livrosFavoritos[0].titulo + "'.")
+
+leitor.livrosFavoritos.push({
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editora: 'Rocco',
+})
+
+// console.log(leitor.livrosFavoritos[1])
+// console.log(leitor.nome + ' tem ' + leitor.livrosFavoritos.length + ' livros favoritos.')
+
+
+// PART II;
+function palindromeCheck(word) {
+  let flag = true;
+  let drow = '';
+ 
+  for (let i = word.length - 1; i >= 0; i -= 1) {
+    drow += (word[i]);
+  }
+
+  return word == drow;
+}
+
+console.log(palindromeCheck('HZ'));
+
