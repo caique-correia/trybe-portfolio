@@ -3,4 +3,4 @@ Portfólio de exercícios pelo Trybe Course;
 Finalização do primeiro projeto e inicialização em JS;
 Postergação: 
  - 4.3 (Bônus);
- - 4.4 (P2; Bônus);
+ - 4.4 (Bônus);
