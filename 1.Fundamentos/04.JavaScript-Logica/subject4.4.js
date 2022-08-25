@@ -227,4 +227,15 @@ function numberMode (modeArray) {
   return w
 }
 
-console.log(numberMode([2, 3, 2, 5, 8, 2, 3]))
+// console.log(numberMode([2, 3, 2, 5, 8, 2, 3]))
+
+
+// 06.;
+function sumToN(N) {
+  let sum = 0;
+  for (let i = N; i > 0; i -= 1) {
+    sum += i;
+  } return sum;
+}
+
+// console.log(sumToN(5)); 
