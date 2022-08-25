@@ -155,7 +155,7 @@ leitor.livrosFavoritos.push({
 function palindromeCheck(word) {
   let flag = true;
   let drow = '';
- 
+
   for (let i = word.length - 1; i >= 0; i -= 1) {
     drow += (word[i]);
   }
@@ -209,7 +209,7 @@ let stringArray = ['Epaminondas', 'José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo
 
 
 // 05.;
-function numberMode (modeArray) {
+function numberMode(modeArray) {
   let modeCount = {};
   let m = 0;
   let w = '';
@@ -239,3 +239,15 @@ function sumToN(N) {
 }
 
 // console.log(sumToN(5)); 
+
+
+// 07.;
+function finalForm(stringWord, stringEnding) {
+  let a = stringWord.length - stringEnding.length;
+  let b = '';
+  for (let i = a; i < stringWord.length; i += 1) {
+    b += stringWord[i];
+  } return stringEnding === b
+}
+
+// console.log(finalForm('abcd efg', 'defg'));
