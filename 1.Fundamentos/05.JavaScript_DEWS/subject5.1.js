@@ -11,11 +11,42 @@ Aqui você vai modificar os elementos já existentes utilizando apenas as funç�
 6. Crie e execute uma função que exiba o conteúdo de todas as tags <p> no console.
 */
 
+let centerContent = document.getElementsByClassName('center-content');
+let mainContent = document.getElementsByClassName('main-content');
+let title = document.getElementsByClassName('title');
+let tagP = document.getElementsByTagName('p');
 
-function questFirst (x) {
-  let questOne = document.getElementsByClassName('center-content');
-  questOne[0].getElementsByTagName('p')[0].innerText = x
+function questFirst(x) {
+  centerContent[0].getElementsByTagName('p')[0].innerText = x
 }
 
-console.log(questFirst("It's my duty"));
+function questSecond() {
+  mainContent[0].style.backgroundColor = 'rgb(76,164,109)'
+}
 
+function questThird() {
+  mainContent[0].childNodes[1].style.backgroundColor = 'white'
+}
+
+function questFourth () {
+  title[0].innerText = 'Exercício 5.1 - JavaScript';
+}
+
+function questFifth () {
+  for (let i in tagP)
+  centerContent[0].getElementsByTagName('p')[i].style.textTransform = 'uppercase';
+  // console.log(centerContent[0].getElementsByTagName('p')[i]);
+  console.log(tagP[i].innerText)
+}
+
+function questSixth() {
+  for (let i in tagP)
+  console.log(tagP[i].innerText)
+}
+
+console.log(questFirst("It's my duty!"));
+console.log(questSecond());
+console.log(questThird());
+console.log(questFourth());
+// console.log(questFifth())
+console.log(questSixth())
