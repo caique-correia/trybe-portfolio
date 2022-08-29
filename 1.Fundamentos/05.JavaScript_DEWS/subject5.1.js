@@ -17,36 +17,36 @@ let title = document.getElementsByClassName('title');
 let tagP = document.getElementsByTagName('p');
 
 function questFirst(x) {
-  centerContent[0].getElementsByTagName('p')[0].innerText = x
+  centerContent[0].getElementsByTagName('p')[0].innerText = x;
 }
 
 function questSecond() {
-  mainContent[0].style.backgroundColor = 'rgb(76,164,109)'
+  mainContent[0].style.backgroundColor = 'rgb(76,164,109)';
 }
 
 function questThird() {
-  mainContent[0].childNodes[1].style.backgroundColor = 'white'
+  mainContent[0].childNodes[1].style.backgroundColor = 'white';
 }
 
-function questFourth () {
+function questFourth() {
   title[0].innerText = 'Exercício 5.1 - JavaScript';
 }
 
-function questFifth () {
-  for (let i in tagP)
-  centerContent[0].getElementsByTagName('p')[i].style.textTransform = 'uppercase';
-  // console.log(centerContent[0].getElementsByTagName('p')[i]);
-  console.log(tagP[i].innerText)
+function questFifth() {
+  for (let i = 0; i < tagP.length; i += 1) {
+    tagP[i].style.textTransform = 'uppercase';
+  }
 }
 
 function questSixth() {
-  for (let i in tagP)
-  console.log(tagP[i].innerText)
+  for (let i = 0; i < tagP.length; i += 1) {
+    console.log(tagP[i].innerText);
+  }
 }
 
-console.log(questFirst("It's my duty!"));
+console.log(questFirst("Duty!"));
 console.log(questSecond());
 console.log(questThird());
 console.log(questFourth());
-// console.log(questFifth())
-console.log(questSixth())
+console.log(questFifth());
+console.log(questSixth());
