@@ -49,21 +49,13 @@ let last0 = last.parentNode.parentNode.nextSibling.nextSibling
 
 // console.log(abcd('section', 'test', 'thisIsATest'))
 
-let pai = document.querySelector('#pai')
-let dad = pai.querySelectorAll('section');
-console.log(pai.childNodes);
-console.log(dad);
+const pai = document.querySelector('#pai')
+const dad = pai.childNodes;
 
-// pai.firstElementChild.remove();
-// pai.lastElementChild.remove();
-// pai.lastElementChild.remove();
-// pai.lastElementChild.remove();
-// console.log(pai.childNodes[10])
-// console.log(document.querySelector('#pai :nth-child(5)'));
-// console.log(pai.nextElementSibling);
-
-for (let i = dad.length; i >= 0; i -= 1) {
-	if (i !== 2) {
-		pai.remove(dad[i]);
+for (let i = dad.length - 1; i >= 0; i -= 1) {
+	if (i !== 3) {
+		dad[i].remove();
 	}
 }
+
+const rest = document.getElementById('segundoEUltimoFilhoDoFilho');
