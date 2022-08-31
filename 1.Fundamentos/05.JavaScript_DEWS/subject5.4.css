@@ -3,34 +3,52 @@ body {
     color: black;
     font-size: normal;
     line-height: 20px;
-    font-family: ci
+    font-family: sans-serif;
 }
 
-#chaos,
-.inputChaos {
-    display: flex;
-    justify-content: space-between;
+#listsSection,
+.inputChaos,
+#inputsAside {
+display: flex;
+justify-content: space-between;
 }
 
 #listsSection {
     display: inline-block;
-    width: 50%;
+    width: 100%;
 }
+
+#listsSection ol,
+#listsSection ul {
+    display: inline-block;
+    width: 35%;
+    margin-left: 2%;
+    vertical-align: text-top;
+
+}
+
 
 #inputsAside{
     border: 1px solid black;
-    display: inline-block;
-    width: 50%;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 25px;
     text-align: center;
 }
 
 #inputsAside .textInput {
-    width: 25%;
-    margin-left: 35%;
+    width: 35%;
+    margin-left: 25%;
 } 
 
 #inputsAside .buttonInput {
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    margin-right: 35%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 25%;
+}
+
+.giveUp {
+    width: 20%;
 }

@@ -40,26 +40,26 @@ function colorAlter() {
     return "#" + randomColor
 }
 
+let familyNumber = 0
 
 function fontFamilyAlter() {
-    let randomFamily = Math.floor(Math.random() * 3);
-    let decision
-    switch (randomFamily) {
-        case randomFamily === 0:
-            decision = 'cursive';
+    familyNumber += 1
+    switch (true) {
+        case familyNumber % 2 === 0:
+            decision = 'sans-serif';
             break;
-        case randomFamily === 1:
+        case familyNumber % 2 !== 0:
             decision = 'monospace';
             break;
-        case randomFamily === 2:
-            decision = 'fantasy';
+        default:
+            break;
     }
     return decision
 }
 
 
 function sizeAlter() {
-    let randomSize = Math.ceil((Math.random() * 15)) + 5;
+    let randomSize = Math.ceil((Math.random() * 15)) + 10;
     return randomSize + 'px'
 }
 
