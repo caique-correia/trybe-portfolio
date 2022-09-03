@@ -75,11 +75,9 @@ for (let i = 0; i < array.length; i += 1) {
 
 console.log(length);
 
-
 // PRIME NUMBER INPUT;
 // let numberInput = 0;
 // let primeOutput = 'Prime!';
-
 
 // switch (true) {
 //   case numberInput < 0:
@@ -98,7 +96,6 @@ console.log(length);
 // }
 
 // console.log(primeOutput);
-
 
 // PRIME NUMBERS INTERVAL;
 let primeArray = [];
@@ -122,15 +119,81 @@ for (let i = 1; i <= 50; i += 1) {
 // console.log(primeArray);
 // console.log(primeBigger);
 
-
 // BÔNUS!!!
-let vertex = '*';
 const edge = 5;
+const newEdge = 7;
+const mediumEdge = Math.ceil(edge / 2);
+const newMediumEdge = Math.ceil(newEdge / 2);
+// const mkDiv = documet.createElement('div');
+const square = document.getElementById('square')
+const right = document.getElementById('right');
+const rightReverse = document.getElementById('rightReverse');
+const equil = document.getElementById('equil');
+const equilEmpty = document.getElementById('equilEmpty');
+
+console.log('square');
 
 for (let i = 0; i < edge; i += 1) {
   let square = '';
-  for (let i = 0; i < edge; i += 1) {
-    square += vertex;
+  for (let j = 0; j < edge; j += 1) {
+    square += '*';
   }
   console.log(square);
+}
+console.log('right');
+
+for (let i = 0; i < edge; i += 1) {
+  let right = '';
+  for (let j = 0; j < edge; j += 1) {
+    if (j <= i) {
+      right += '*';
+    }
+  }
+  console.log(right);
+}
+console.log('rightRev');
+
+for (let i = 0; i < edge; i += 1) {
+  let rightRev = '';
+  for (let j = edge - 1; j >= 0; j -= 1) {
+    if (j <= i) {
+      rightRev += '*';
+    } else {
+      rightRev += ' ';
+    }
+  }
+  console.log(rightRev);
+}
+console.log('equil');
+
+for (let i = 1; i <= mediumEdge; i += 1) {
+  let equil = '';
+  for (let j = mediumEdge; j > i; j -= 1) {
+    equil += ' ';
+  } for (let k = 1; k <= (i * 2) - 1; k += 1) {
+    equil += '*';
+  }
+  console.log(equil);
+}
+console.log('equilEmpty');
+
+for (let i = 1; i <= newMediumEdge; i += 1) {
+  let equilEmpty = '';
+  if (i !== newMediumEdge) {
+    for (let j = newMediumEdge; j > i; j -= 1) {
+      equilEmpty += ' ';
+    }
+    equilEmpty += '*';
+    for (let k = 1; k <= (i * 2) - 3; k += 1) {
+      equilEmpty += ' ';
+    }
+    if (i > 1) {
+      equilEmpty += '*';
+    }
+  } else {
+    for (let l = 1; l <= newEdge; l += 1) {
+      equilEmpty += '*';
+    }
+  }
+  console.log(equilEmpty);
 }
