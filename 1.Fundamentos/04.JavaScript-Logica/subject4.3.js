@@ -33,36 +33,13 @@ for (let i = 1; i <= fatorial; i += 1) {
 
 // Anagramas;
 let word = 'tryber';
-let anagramArray = [];
 let anagramString = '';
-
-// word = ['t', 'r', 'y', 'b', 'e', 'r'];
 
 for (let i = word.length - 1; i >= 0; i -= 1) {
   anagramString += word[i]
 }
 
-// for (let i = 0; i < anagramArray.length; i += 1) {
-//     anagramString += anagramArray[i];
-// }
-
 // console.log(anagramString);
-
-
-// String.length
-
-// // let a;
-// let b = '';
-// let c;
-
-// for (let i = 0; i < array.length; i += 1) {
-//     let a = array.length[i];
-//     for (let ia = 0; ia < array[i].length; ia += 1) {
-//         b.concat(a[ia]);
-//     }
-// }
-
-// console.log(b);
 
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 let length = array[0];
@@ -73,29 +50,7 @@ for (let i = 0; i < array.length; i += 1) {
   }
 }
 
-console.log(length);
-
-// PRIME NUMBER INPUT;
-// let numberInput = 0;
-// let primeOutput = 'Prime!';
-
-// switch (true) {
-//   case numberInput < 0:
-//     primeOutput = 'Negative unacceptable!';
-//     break;
-//   case numberInput === 0 || numberInput === 1:
-//     primeOutput = 'Haha! Funny... but no.';
-//     break;
-//   default:
-//     for (let i = 2; i < numberInput; i += 1) {
-//       switch (true) {
-//         case numberInput % i === 0:
-//           primeOutput = 'Not prime!';
-//       }
-//     }
-// }
-
-// console.log(primeOutput);
+// console.log(length);
 
 // PRIME NUMBERS INTERVAL;
 let primeArray = [];
@@ -120,18 +75,16 @@ for (let i = 1; i <= 50; i += 1) {
 // console.log(primeBigger);
 
 // BÔNUS!!!
+// const square = document.getElementById('square')
+// const right = document.getElementById('right');
+// const rightReverse = document.getElementById('rightReverse');
+// const equil = document.getElementById('equil');
+// const equilEmpty = document.getElementById('equilEmpty');
+
 const edge = 5;
 const newEdge = 7;
 const mediumEdge = Math.ceil(edge / 2);
 const newMediumEdge = Math.ceil(newEdge / 2);
-// const mkDiv = documet.createElement('div');
-const square = document.getElementById('square')
-const right = document.getElementById('right');
-const rightReverse = document.getElementById('rightReverse');
-const equil = document.getElementById('equil');
-const equilEmpty = document.getElementById('equilEmpty');
-
-console.log('square');
 
 for (let i = 0; i < edge; i += 1) {
   let square = '';
@@ -140,7 +93,6 @@ for (let i = 0; i < edge; i += 1) {
   }
   console.log(square);
 }
-console.log('right');
 
 for (let i = 0; i < edge; i += 1) {
   let right = '';
@@ -151,7 +103,6 @@ for (let i = 0; i < edge; i += 1) {
   }
   console.log(right);
 }
-console.log('rightRev');
 
 for (let i = 0; i < edge; i += 1) {
   let rightRev = '';
@@ -164,7 +115,6 @@ for (let i = 0; i < edge; i += 1) {
   }
   console.log(rightRev);
 }
-console.log('equil');
 
 for (let i = 1; i <= mediumEdge; i += 1) {
   let equil = '';
@@ -175,7 +125,6 @@ for (let i = 1; i <= mediumEdge; i += 1) {
   }
   console.log(equil);
 }
-console.log('equilEmpty');
 
 for (let i = 1; i <= newMediumEdge; i += 1) {
   let equilEmpty = '';
@@ -196,4 +145,20 @@ for (let i = 1; i <= newMediumEdge; i += 1) {
     }
   }
   console.log(equilEmpty);
+}
+
+const inputPrime = 37;
+let flag = true;
+console.log(!!test);
+
+for (let i = 2; i < inputPrime; i += 1) {
+  if (inputPrime % i === 0) {
+    flag = false;
+  }
+}
+
+if (flag) {
+  console.log(`${inputPrime} is prime`);
+} else {
+  console.log(`${inputPrime} is NOT prime`);
 }
