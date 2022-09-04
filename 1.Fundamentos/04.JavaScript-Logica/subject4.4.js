@@ -251,3 +251,5 @@ function finalForm(stringWord, stringEnding) {
 }
 
 // console.log(finalForm('abcd efg', 'defg'));
+
+//BONUS;
