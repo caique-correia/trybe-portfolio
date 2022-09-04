@@ -281,3 +281,18 @@ for (let i = 1; i < translateArray.length; i += 1) {
 }
 
 // console.log(romanReturn);
+let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+
+console.log(vector[1][2])
+
+let arrayPairs = [];
+
+for (let i in vector) {
+  for (let j in vector[i]) {
+    if (vector[i][j] % 2 === 0) {
+      arrayPairs.push(vector[i][j]);
+    }
+  }
+}
+
+// console.log(arrayPairs);
