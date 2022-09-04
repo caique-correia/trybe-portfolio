@@ -253,3 +253,31 @@ function finalForm(stringWord, stringEnding) {
 // console.log(finalForm('abcd efg', 'defg'));
 
 //BONUS;
+const romanNumerals = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  M: 1000,
+}
+
+const romanString = 'MCMXCVIII';
+const romanSplit = romanString.split('');
+let translateArray = [];
+
+for (let i = 0; i < romanSplit.length; i += 1) {
+  const romanTranslate = romanNumerals[romanSplit[i]];
+  translateArray.push(romanTranslate);
+}
+
+let romanReturn = translateArray[0]
+
+for (let i = 1; i < translateArray.length; i += 1) {
+  romanReturn += translateArray[i];
+  if (translateArray[i - 1] < translateArray[i]) {
+    romanReturn -= 2 * translateArray[i - 1];
+  }
+}
+
+// console.log(romanReturn);
