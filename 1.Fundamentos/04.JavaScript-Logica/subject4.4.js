@@ -285,9 +285,6 @@ for (let i = 1; i < translateArray.length; i += 1) {
 
 // Vector Pairs;
 let vector = [[1, 2], [3, 4, 5, 6], [7, 8, 9, 10]];
-
-console.log(vector[1][2])
-
 let arrayPairs = [];
 
 for (let i in vector) {
@@ -331,3 +328,50 @@ for (let i = 0; i < basket.length; i += 1) {
 }
 
 // console.log(basket.length, baskedObj);
+
+// Object Find;
+let moradores = {
+  blocoUm: [
+    {
+      nome: 'Luiza',
+      sobrenome: 'Guimarães',
+      andar: 10,
+      apartamento: 1005,
+    },
+    {
+      nome: 'William',
+      sobrenome: 'Albuquerque',
+      andar: 5,
+      apartamento: 502,
+    },
+  ],
+  blocoDois: [
+    {
+      nome: 'Murilo',
+      sobrenome: 'Ferraz',
+      andar: 8,
+      apartamento: 804,
+    },
+    {
+      nome: 'Zoey',
+      sobrenome: 'Brooks',
+      andar: 1,
+      apartamento: 101,
+    },
+  ],
+};
+
+const zoeyInfo = moradores['blocoDois'][1]
+// console.log(`O morador do bloco 2 de nome ${zoeyInfo.nome} ${zoeyInfo.sobrenome} mora no ${zoeyInfo.andar}° andar, apartamento ${zoeyInfo.apartamento}`);
+
+// Object Loop;
+const objLength = Object.values(moradores);
+const nomeM = moradores
+
+for (let i = 0; i < objLength.length; i += 1) {
+  for (let j = 0; j < objLength[i].length; j += 1) {
+    const nameTag = objLength[i][j].nome;
+    const surnameTag = objLength[i][j].sobrenome;
+    console.log(nameTag, surnameTag);
+  }
+}
