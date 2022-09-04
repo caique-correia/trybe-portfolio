@@ -252,7 +252,8 @@ function finalForm(stringWord, stringEnding) {
 
 // console.log(finalForm('abcd efg', 'defg'));
 
-//BONUS;
+// BONUS;
+// Roman Numerals;
 const romanNumerals = {
   I: 1,
   V: 5,
@@ -281,7 +282,9 @@ for (let i = 1; i < translateArray.length; i += 1) {
 }
 
 // console.log(romanReturn);
-let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+
+// Vector Pairs;
+let vector = [[1, 2], [3, 4, 5, 6], [7, 8, 9, 10]];
 
 console.log(vector[1][2])
 
@@ -296,3 +299,35 @@ for (let i in vector) {
 }
 
 // console.log(arrayPairs);
+
+// Basket Order;
+const basket = [
+  'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
+  'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
+  'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
+  'Banana', 'Melancia', 'Laranja', 'Laranja', 'Jaca', 'Uva',
+  'Banana', 'Uva', 'Laranja', 'Pera', 'Melancia', 'Uva',
+  'Jaca', 'Banana', 'Pera', 'Abacate', 'Melancia', 'Melancia',
+  'Laranja', 'Pera', 'Banana', 'Jaca', 'Laranja', 'Melancia',
+  'Abacate', 'Abacate', 'Pera', 'Melancia', 'Banana', 'Banana',
+  'Abacate', 'Uva', 'Laranja', 'Banana', 'Abacate', 'Uva',
+  'Uva', 'Abacate', 'Abacate', 'Melancia', 'Uva', 'Jaca',
+  'Uva', 'Banana', 'Abacate', 'Banana', 'Uva', 'Banana',
+  'Laranja', 'Laranja', 'Jaca', 'Jaca', 'Abacate', 'Jaca',
+  'Laranja', 'Melancia', 'Pera', 'Jaca', 'Melancia', 'Uva',
+  'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
+  'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
+  'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
+  'Banana', 'Pera', 'Abacate', 'Uva',
+];
+let baskedObj = {};
+
+for (let i = 0; i < basket.length; i += 1) {
+  if (!baskedObj[basket[i]]) {
+    baskedObj[basket[i]] = 1;
+  } else {
+    baskedObj[basket[i]] += 1
+  }
+}
+
+// console.log(basket.length, baskedObj);
