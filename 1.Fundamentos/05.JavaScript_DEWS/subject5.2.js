@@ -45,3 +45,9 @@ for (let i = 1; i <= 10; i += 1) {
     newLi.innerHTML = numbExt[i];
     alterUL[0].appendChild(newLi)
 }
+
+for (let i = 0; i < 3; i += 1) {
+    const newH3 = document.createElement('h3');
+    newH3.id = `h3-${i}`;
+    alterMain[0].appendChild(newH3);
+}
