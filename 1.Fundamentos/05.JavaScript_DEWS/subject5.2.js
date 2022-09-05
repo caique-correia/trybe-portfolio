@@ -51,3 +51,27 @@ for (let i = 0; i < 3; i += 1) {
     newH3.id = `h3-${i}`;
     alterMain[0].appendChild(newH3);
 }
+
+// Part II;
+const a1 = document.getElementsByTagName('h1')[0];
+a1.classList.add('title');
+
+const a2 = document.getElementsByTagName('h3');
+for (let i = 0; i < a2.length; i += 1) {
+    a2[i].classList.add('description');
+}
+
+const a3 = document.getElementsByClassName('left-content')[0];
+a3.parentNode.removeChild(a3);
+
+const a4 = document.getElementsByClassName('right-content')[0];
+a4.style.marginRight = 'auto';
+
+const a5 = document.getElementsByClassName('center-content')[0];
+a5.parentNode.style.backgroundColor = 'green';
+
+const a6 = document.getElementsByTagName('ul')[0];
+const a7 = document.getElementsByTagName('li');
+for (let i = 0; i < 2; i += 1) {
+    a6.lastElementChild.remove();
+}
