@@ -1,16 +1,53 @@
 function createDaysOfTheWeek() {
-    const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
-    const weekDaysList = document.querySelector('.week-days');
-  
-    for (let index = 0; index < weekDays.length; index += 1) {
-      const days = weekDays[index];
-      const dayListItem = document.createElement('li');
-      dayListItem.innerHTML = days;
-  
-      weekDaysList.appendChild(dayListItem);
-    };
+  const weekDays = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.']
+  const weekDaysList = document.querySelector('.week-days');
+
+  for (let index = 0; index < weekDays.length; index += 1) {
+    const days = weekDays[index];
+    const dayListItem = document.createElement('li');
+    dayListItem.innerHTML = days;
+
+    weekDaysList.appendChild(dayListItem);
   };
-  
-  createDaysOfTheWeek();
-  
-  // Escreva seu código abaixo.
+};
+
+createDaysOfTheWeek();
+
+// Escreva seu código abaixo.
+// December Days;
+
+let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+function decemberDays(x) {
+  const ulDays = document.getElementById('days');
+
+  for (let i = 0; i < x.length; i += 1) {
+    const newLi = document.createElement('li');
+    newLi.className = 'day';
+    if (x[i] === 24 || x[i] === 25 || x[i] === 31) {
+      newLi.classList.add('holiday');
+    }
+    if (x[i] === 4 || x[i] === 11 || x[i] === 18 || x[i] === 25) {
+      newLi.classList.add('friday');
+    }
+    newLi.innerText = x[i];
+    ulDays.appendChild(newLi);
+  }
+}
+
+decemberDays(decemberDaysList);
+
+// Button Holiday;
+
+function btnHoliday() {
+  const btnCont = document.getElementsByClassName('buttons-container')[0];
+  const newBtn = document.createElement('button');
+  newBtn.id = 'btn-holiday';
+  newBtn.innerHTML = 'Feriados';
+  btnCont.appendChild(newBtn);
+}
+
+btnHoliday();
+
+// Background Holiday;
+
