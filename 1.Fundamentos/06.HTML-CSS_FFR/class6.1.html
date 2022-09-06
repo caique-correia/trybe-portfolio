@@ -15,11 +15,13 @@
     </header>
     <form action="">
         <label for="email"> Email:
-            <input type="email" name="email">
+            <input type="email" name="email" autocomplete="off" autofocus required>
         </label>
         <label for="password"> Password:
-            <input type="password" name="password">
+            <input type="password" name="password" required>
         </label>
+        <input type="checkbox" name="checkbox" id="checkbox">Lembre-me.
+        <button type="submit">Entrar</button>
     </form>
     <!-- <script src="class6.1.js"></script> -->
 </body>
