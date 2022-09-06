@@ -52,13 +52,13 @@ addHolidayButton();
 
 // Background Holiday;
 
-const getButtonHolidayId = document.getElementById('btn-holiday');
+const getHolidayButtonId = document.getElementById('btn-holiday');
 const getHolidayClass = document.getElementsByClassName('holiday');
 const getDayClass = document.getElementsByClassName('day');
 const naturalBgColor = 'rgb(238,238,238)';
 const naturalLtColor = 'rgb(119,119,119)';
 const holidayBgColor = 'green';
-const holidayLtColor = 'white';
+const whiteLtColor = 'white';
 
 function applyNaturalColor() {
   for (let i = 0; i < getDayClass.length; i += 1) {
@@ -74,7 +74,7 @@ function onClickHolidayColor() {
   if (holidayClassColor === naturalBgColor || holidayClassColor !== holidayBgColor) {
     for (let i = 0; i < getHolidayClass.length; i += 1) {
       getHolidayClass[i].style.backgroundColor = holidayBgColor;
-      getHolidayClass[i].style.color = holidayLtColor;
+      getHolidayClass[i].style.color = whiteLtColor;
     }
   } else {
     for (let i = 0; i < getHolidayClass.length; i += 1) {
@@ -84,6 +84,66 @@ function onClickHolidayColor() {
   }
 }
 
-getButtonHolidayId.addEventListener('click', onClickHolidayColor);
+getHolidayButtonId.addEventListener('click', onClickHolidayColor);
 
 // Add Friday Button;
+
+function addFridayButton() {
+  const newButton = document.createElement('button');
+  newButton.id = 'btn-friday';
+  newButton.innerHTML = 'Sexta-feira';
+  getButtonsContainer[0].appendChild(newButton);
+}
+
+addFridayButton();
+
+// Background Holiday
+const getFridayButtonId = document.getElementById('btn-friday');
+const getFridayClass = document.getElementsByClassName('friday');
+const fridayBgColor = 'blue';
+
+function onClickFridayColor() {
+  const fridayClassColor = getFridayClass[0].style.backgroundColor;
+  if (fridayClassColor === naturalBgColor || fridayClassColor !== fridayBgColor) {
+    for (let i = 0; i < getFridayClass.length; i += 1) {
+      getFridayClass[i].style.backgroundColor = fridayBgColor;
+      getFridayClass[i].style.color = whiteLtColor;
+    }
+  } else {
+    for (let i = 0; i < getFridayClass.length; i += 1) {
+      getFridayClass[i].style.backgroundColor = naturalBgColor;
+      getFridayClass[i].style.color = naturalLtColor;
+    }
+  }
+}
+
+getFridayButtonId.addEventListener('click', onClickFridayColor);
+
+// Zoom Day
+
+function onMouseoverDayClass(event) {
+  event.target.style.fontSize = '2.5em'
+}
+
+function onMouseoutDayClass(event) {
+  event.target.style.fontSize = ''
+}
+
+for (let i = 0; i < getDayClass.length; i += 1) {
+  getDayClass[i].addEventListener('mouseover', onMouseoverDayClass);
+  getDayClass[i].addEventListener('mouseout', onMouseoutDayClass);
+}
+
+// Add Tasks;
+
+const getTaskInputId = document.getElementById('task-input');
+const getBtnAddId = document.getElementById('btn-add');
+
+function onClickAddTask(event) {
+  const getMyTasksClass = document.getElementsByClassName('my-tasks');
+  const newSpan = document.createElement('span');
+  newSpan.innerHTML = getTaskInputId.value + '<br>';
+  getMyTasksClass[0].appendChild(newSpan);
+}
+
+getBtnAddId.addEventListener('click', onClickAddTask)
