@@ -57,7 +57,7 @@ const getHolidayClass = document.getElementsByClassName('holiday');
 const getDayClass = document.getElementsByClassName('day');
 const naturalBgColor = 'rgb(238,238,238)';
 const naturalLtColor = 'rgb(119,119,119)';
-const holidayBgColor = 'green';
+const holidayBgColor = 'red';
 const whiteLtColor = 'white';
 
 function applyNaturalColor() {
@@ -138,12 +138,61 @@ for (let i = 0; i < getDayClass.length; i += 1) {
 
 const getTaskInputId = document.getElementById('task-input');
 const getBtnAddId = document.getElementById('btn-add');
+const getMyTasksClass = document.querySelector('.my-tasks');
 
 function onClickAddTask(event) {
-  const getMyTasksClass = document.getElementsByClassName('my-tasks');
   const newSpan = document.createElement('span');
   newSpan.innerHTML = getTaskInputId.value + '<br>';
-  getMyTasksClass[0].appendChild(newSpan);
+  getMyTasksClass.appendChild(newSpan);
 }
 
-getBtnAddId.addEventListener('click', onClickAddTask)
+getBtnAddId.addEventListener('click', onClickAddTask);
+
+// Add Div Color;
+
+function addDivBgColor(x) {
+  const newDiv = document.createElement('div');
+  newDiv.className = 'task';
+  newDiv.style.backgroundColor = x;
+  getMyTasksClass.appendChild(newDiv);
+}
+
+addDivBgColor('green');
+
+// Function Select Task;
+
+const getTaskClass = document.getElementsByClassName('task');
+
+function addSelectedClass(event) {
+  if (event.target.className === 'task') {
+    event.target.classList.add('selected');
+  } else {
+    event.target.classList.remove('selected');
+  }
+}
+
+for (let i = 0; i < getTaskClass.length; i += 1) {
+  getTaskClass[i].addEventListener('click', addSelectedClass);
+}
+
+// Add Selected Color to Task;
+
+
+function atributeSelectedColor(event) {
+  const getSelectedClass = document.querySelector('.selected');
+  const getTaskClass = document.querySelector('.task');
+
+  let a = event.target.style.backgroundColor
+  let b = getSelectedClass.style.backgroundColor
+  if (a !== b) {
+    event.target.style.backgroundColor = getSelectedClass.style.backgroundColor;
+    event.target.style.color = whiteLtColor;
+  } else {
+    event.target.style.backgroundColor = naturalBgColor;
+    event.target.style.color = naturalLtColor;
+  }
+}
+
+for (let i = 0; i < getDayClass.length; i += 1) {
+  getDayClass[i].addEventListener('click', atributeSelectedColor);
+}
