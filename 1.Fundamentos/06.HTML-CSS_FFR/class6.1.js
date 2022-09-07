@@ -11,14 +11,13 @@ function onClickInputCheckbox(event) {
   event.preventDefault();
 }
 
-function onKeyupInputText(event) {
-  event.preventDefault();
+function onKeypressInputText(event) {
   const eventKey = event.key;
-  if (eventKey === 'a') {
-    
+  if (eventKey !== 'a') {
+    event.preventDefault();
   }
 }
 
 HREF_LINK.addEventListener('click', onClickHrefLink);
-HREF_LINK.addEventListener('click', onClickInputCheckbox);
-HREF_LINK.addEventListener('keyup', onKeyupInputText);
+INPUT_CHECKBOX.addEventListener('click', onClickInputCheckbox);
+INPUT_TEXT.addEventListener('keypress', onKeypressInputText);
