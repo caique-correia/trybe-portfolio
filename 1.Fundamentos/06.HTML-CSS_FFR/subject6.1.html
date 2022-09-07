@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="subject6.1.css">
+  <title>6.1 Subject</title>
+</head>
+
+<body>
+  <header>
+    <h1>6.1 Subject</h1>
+  </header>
+  <main>
+    <form action="">
+      <fieldset id="main-fieldset">
+        <br>
+        <label for="name-input">Nome:
+          <input type="text" name="name" id="name-input" required>
+        </label>
+        <br>
+        <br>
+        <label for="email-input"> Email:
+          <input type="email" name="email" id="email-input" required>
+        </label>
+        <br>
+        <br>
+        <label for="option1">
+          <input type="radio" name="radio-option" class="radio-option" id="option1" value="option1" checked>Opção 1
+        </label>
+        <label for="option2">
+          <input type="radio" name="radio-option" class="radio-option" id="option2" value="option2">Opção 2
+        </label>
+        <label for="option3">
+          <input type="radio" name="radio-option" class="radio-option" id="option3" value="option3">Opção 3
+        </label>
+        <label for="option4">
+          <input type="radio" name="radio-option" class="radio-option" id="option4" value="option4">Opção 4
+        </label>
+        <br>
+        <br>
+        <label for="answer-field">
+          <p class="field-header">Espaço para digitar a resposta:</p><br>
+          <textarea id="answer-field" name="answer-field" rows="10" cols="45"></textarea>
+        </label>
+        <br>
+        <br>
+        <label for="date-input">
+          <p class="field-header">Data:</p>
+          <input type="date" name="date" id="date-input" placeholder="dd-mm-yyyy" value="" min="2020-01-01"
+            max="2030-12-31">
+        </label>
+        <br>
+        <label for="ads-agreement"> Concordo 1
+          <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="ads-agreement">
+        </label>
+        <br>
+        <label for="publish-agreement"> Concordo 2
+          <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="publish-agreement">
+        </label>
+      </fieldset>
+      <button type="submit" class="bottom-button">Enviar</button>
+      <button type="reset" class="bottom-button">Apagar</button>
+    </form>
+  </main>
+  <footer></footer>
+  <script src="subject6.1.js"></script>
+</body>
+
+</html>
