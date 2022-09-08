@@ -49,17 +49,15 @@
         <br>
         <label for="date-input">
           <p class="field-header">Data:</p>
-          <input type="date" name="date" id="date-input" placeholder="dd-mm-yyyy" value="" min="2020-01-01"
-            max="2030-12-31">
+          <input type="date" name="date" id="date-input" placeholder="dd-mm-yyyy" required>
         </label>
         <br>
-        <label for="ads-agreement"> Concordo 1
-          <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="ads-agreement">
-        </label>
+        <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="ads-agreement">
+        <label for="ads-agreement"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
         <br>
-        <label for="publish-agreement"> Concordo 2
-          <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="publish-agreement">
-        </label>
+        <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="publish-agreement" required>
+        <label for="publish-agreement"> Concordo que imagens das minhas férias poderão ser usadas na divulgação de
+          concursos futuros.</label>
       </fieldset>
       <button type="submit" class="bottom-button" id="submit-button">Enviar</button>
       <button type="reset" class="bottom-button" id="reset-button">Apagar</button>

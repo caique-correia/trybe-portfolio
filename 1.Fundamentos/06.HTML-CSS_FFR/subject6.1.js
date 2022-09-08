@@ -10,34 +10,34 @@ const maxEmail = 50;
 const minAnswer = 0;
 const maxAnswer = 500;
 
-function nameInputLength(min, max) {
+function nameInputLength() {
   const inputLength = getNameInput.value.length;
   let flag = 0;
-  if (inputLength < min) {
+  if (inputLength < minName) {
     flag = 1;
-  } else if (inputLength >= max) {
+  } else if (inputLength >= maxName) {
     flag = 2;
   }
   return flag;
 }
 
-function emailInputLength(min, max) {
+function emailInputLength() {
   const inputLength = getEmailInput.value.length;
   let flag = 0;
-  if (inputLength < min) {
+  if (inputLength < minEmail) {
     flag = 1;
-  } else if (inputLength >= max) {
+  } else if (inputLength >= maxEmail) {
     flag = 2;
   }
   return flag;
 }
 
-function answerInputLength(min, max) {
+function answerFieldLength() {
   const inputLength = getAnswerField.value.length;
   let flag = 0;
-  if (inputLength < min) {
+  if (inputLength < minAnswer) {
     flag = 1;
-  } else if (inputLength >= max) {
+  } else if (inputLength >= maxAnswer) {
     flag = 2;
   }
   return flag;
@@ -46,6 +46,7 @@ function answerInputLength(min, max) {
 function nameInputLengthMin(nameInputLength, event) {
   if (nameInputLength === 1) {
     event.preventDefault();
+    alert(`Dados Inválidos!`);
     alert(`Número mínimo de caracteres em "Nome": 10.`);
   }
 }
@@ -53,6 +54,7 @@ function nameInputLengthMin(nameInputLength, event) {
 function nameInputLengthMax(nameInputLength, event) {
   if (nameInputLength === 2) {
     event.preventDefault()
+    alert(`Dados Inválidos!`);
     alert(`Número máximo de caracteres em "Nome": 40.`)
   }
 }
@@ -60,6 +62,7 @@ function nameInputLengthMax(nameInputLength, event) {
 function emailInputLengthMin(emailInputLength, event) {
   if (emailInputLength === 1) {
     event.preventDefault();
+    alert(`Dados Inválidos!`);
     alert(`Número mínimo de caracteres em "Email": 10.`);
   }
 }
@@ -67,6 +70,7 @@ function emailInputLengthMin(emailInputLength, event) {
 function emailInputLengthMax(emailInputLength, event) {
   if (emailInputLength === 2) {
     event.preventDefault()
+    alert(`Dados Inválidos!`);
     alert(`Número máximo de caracteres em "Email": 50.`)
   }
 }
@@ -74,6 +78,7 @@ function emailInputLengthMax(emailInputLength, event) {
 function answerFieldLengthMin(answerFieldLength, event) {
   if (answerFieldLength === 1) {
     event.preventDefault();
+    alert(`Dados Inválidos!`);
     alert(`Número mínimo de caracteres para resposta: 0.`);
   }
 }
@@ -81,21 +86,17 @@ function answerFieldLengthMin(answerFieldLength, event) {
 function answerFieldLengthMax(answerFieldLength, event) {
   if (answerFieldLength === 2) {
     event.preventDefault()
+    alert(`Dados Inválidos!`);
     alert(`Número máximo de caracteres para resposta: 500.`)
   }
 }
 
 // Listeners;
 
-getNameInput.addEventListener('keypress', (event) => {
-  const nameInputParameters = nameInputLength(10, 40);
-  nameInputLengthMax(nameInputParameters, event);
-})
-
 getSubmitButton.addEventListener('click', (event) => {
-  const nameInputParameters = nameInputLength(10, 40);
-  const emailInputParameters = emailInputLength(10, 50);
-  const answerFieldParameters = emailInputLength(0, 500);
+  const nameInputParameters = nameInputLength();
+  const emailInputParameters = emailInputLength();
+  const answerFieldParameters = answerFieldLength();
   
   nameInputLengthMin(nameInputParameters, event);
   nameInputLengthMax(nameInputParameters, event);
@@ -103,6 +104,6 @@ getSubmitButton.addEventListener('click', (event) => {
   emailInputLengthMin(emailInputParameters, event);
   emailInputLengthMax(emailInputParameters, event);
 
-  answerFieldLengthMin(emailInputParameters, event);
-  answerFieldLengthMax(emailInputParameters, event);
+  answerFieldLengthMin(answerFieldParameters, event);
+  answerFieldLengthMax(answerFieldParameters, event);
 })
