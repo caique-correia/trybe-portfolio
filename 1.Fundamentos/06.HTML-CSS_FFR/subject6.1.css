@@ -1,3 +1,15 @@
+#main-fieldset {
+    border: 4px solid green;
+}
+
+#answer-field {
+    border: 3px solid green;
+}
+
+#name-input , #email-input , #date-input , .bottom-button {
+    border: 2px solid green;
+}
+
 .field-header {
     display: inline-block;
     font-size: x-large;
