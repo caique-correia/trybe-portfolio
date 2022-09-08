@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="subject6.1.css">
+  <title>6.1 Subject</title>
+</head>
+
+<body>
+  <header>
+    <h1>6.1 Subject</h1>
+  </header>
+  <main>
+    <form action="">
+      <fieldset id="main-fieldset">
+        <br>
+        <label for="name-input">Nome:
+          <input type="text" name="name" id="name-input" required>
+        </label>
+        <br>
+        <br>
+        <label for="email-input"> Email:
+          <input type="email" name="email" id="email-input" required>
+        </label>
+        <br>
+        <br>
+        <label for="option1">
+          <input type="radio" name="radio-option" class="radio-option" id="option1" value="cidade" checked>Cidade
+        </label>
+        <label for="option2">
+          <input type="radio" name="radio-option" class="radio-option" id="option2" value="campo">Campo
+        </label>
+        <label for="option3">
+          <input type="radio" name="radio-option" class="radio-option" id="option3" value="praia">Praia
+        </label>
+        <label for="option4">
+          <input type="radio" name="radio-option" class="radio-option" id="option4" value="montanhas">Montanhas
+        </label>
+        <br>
+        <br>
+        <label for="answer-field">
+          <p class="field-header">Espaço para digitar a resposta:</p><br>
+          <textarea id="answer-field" name="answer-field" rows="10" cols="45" required></textarea>
+        </label>
+        <br>
+        <br>
+        <label for="date-input">
+          <p class="field-header">Data:</p>
+          <input type="date" name="date" id="date-input" placeholder="dd-mm-yyyy" required>
+        </label>
+        <br>
+        <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="ads-agreement">
+        <label for="ads-agreement"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+        <br>
+        <input type="checkbox" name="checkbox-agreement" class="checkbox-agreement" id="publish-agreement" required>
+        <label for="publish-agreement"> Concordo que imagens das minhas férias poderão ser usadas na divulgação de
+          concursos futuros.</label>
+      </fieldset>
+      <button type="submit" class="bottom-button" id="submit-button">Enviar</button>
+      <button type="reset" class="bottom-button" id="reset-button">Apagar</button>
+    </form>
+  </main>
+  <footer></footer>
+  <script src="subject6.1.js"></script>
+</body>
+
+</html>

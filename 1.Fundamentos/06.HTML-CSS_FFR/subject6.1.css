@@ -1,0 +1,35 @@
+#main-fieldset {
+    border: 4px solid green;
+}
+
+#answer-field {
+    border: 3px solid green;
+}
+
+#name-input , #email-input , #date-input , .bottom-button {
+    border: 2px solid green;
+}
+
+.field-header {
+    display: inline-block;
+    font-size: x-large;
+    margin: 0;
+}
+
+#date-input {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+#main-fieldset {
+    width: fit-content;
+    padding: 25px;
+    padding-top: 0;
+}
+
+.bottom-button {
+    width: 140px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 8px;
+}
