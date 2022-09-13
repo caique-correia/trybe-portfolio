@@ -141,8 +141,11 @@ const getBtnAddId = document.getElementById('btn-add');
 const getMyTasksClass = document.querySelector('.my-tasks');
 
 function onClickAddTask(event) {
+  if (!getTaskInputId.value) {
+    alert ('Insira compromisso no campo estipulado.')
+  }
   const newSpan = document.createElement('span');
-  newSpan.innerHTML = getTaskInputId.value + '<br>';
+  newSpan.innerHTML = '<br>' + getTaskInputId.value;
   getMyTasksClass.appendChild(newSpan);
 }
 
@@ -196,3 +199,13 @@ function atributeSelectedColor(event) {
 for (let i = 0; i < getDayClass.length; i += 1) {
   getDayClass[i].addEventListener('click', atributeSelectedColor);
 }
+
+// Bonus;
+
+function onKeydownBonus(event) {
+  if (event.key == 'Enter') {
+    onClickAddTask(getTaskInputId.value);
+  }
+}
+
+getTaskInputId.addEventListener('keydown', onKeydownBonus);
