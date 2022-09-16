@@ -73,3 +73,20 @@ const biggestWordSplit = phrase => phrase.split(' ').sort((a, b) => b.length - a
 
 // console.log(biggestWord(phrase));
 // console.log(biggestWordSplit(phrase));
+
+// Third;
+const btnClickHere = document.getElementById('btn-click-here');
+const counterSpan = document.getElementById('counter');
+
+// btnClickHere.addEventListener('click', () => {
+//   let result = parseInt(counterSpan.innerText);
+//   result += 1;
+//   counterSpan.innerText = result;
+// })
+
+// btnClickHere.addEventListener('click', () => {
+//   counterSpan.innerText = parseInt(counterSpan.innerText) + 1;
+// })
+
+btnClickHere.addEventListener('click', () => counterSpan.innerText = parseInt(counterSpan.innerText) + 1);
+
