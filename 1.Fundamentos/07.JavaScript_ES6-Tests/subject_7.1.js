@@ -90,3 +90,6 @@ const counterSpan = document.getElementById('counter');
 
 btnClickHere.addEventListener('click', () => counterSpan.innerText = parseInt(counterSpan.innerText) + 1);
 
+// Fourth;
+const substituaX = () => {};
+
