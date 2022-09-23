@@ -29,14 +29,14 @@ console.log(findMusic('31031685'));
 
 // ARRAY.SOME/EVERY - PARA FIXAR;
 // FIRST;
-const names0 = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+const names1 = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
 const hasName = (arr, name) => {
   //Adicione seu código aqui
   return arr.some((e) => e === name);
 };
 
-console.log(hasName(names0, 'Ana'));
+console.log(hasName(names1, 'Ana'));
 
 // SECOND;
 const people = [
@@ -53,3 +53,17 @@ const verifyAges = (arr, minimumAge) => {
 };
 
 console.log(verifyAges(people, 18));
+
+// THIRD;
+const people1 = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+
+// Adicione se código aqui
+people1.sort((a, b) => a.age > b.age ? -1:1);
+
+console.log(people1);
