@@ -43,3 +43,6 @@ const answersReading = (rightAnswers, studentAnswers, callback) => {
 };
 
 console.log(answersReading(RIGHT_ANSWERS, STUDENT_ANSWERS, compareAnswers));
+
+// BONUS - GAME ACTIONS SIMULATOR;
+// PART I;
