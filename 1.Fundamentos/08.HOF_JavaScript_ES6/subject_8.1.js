@@ -20,3 +20,26 @@ const compareLuckyNumber = (luckyNumber, RNG) => luckyNumber === RNG(5) ? 'Parab
 // console.log(compareLuckyNumber(5, randomNumberGenerator));
 
 // CORRETOR AUTOMÁTICO DE EXAME;
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const compareAnswers = (rightAnswer, studentAnswer) => {
+  switch (true) {
+    case studentAnswer === 'N.A':
+      return 0;
+    case studentAnswer === rightAnswer:
+      return 1;
+    default:
+      return 0.5;
+  }
+};
+
+const answersReading = (rightAnswers, studentAnswers, callback) => {
+  let result = 0;
+  for (let i in rightAnswers) {
+    result += callback(rightAnswers[i], studentAnswers[i]);
+  }
+  return result;
+};
+
+console.log(answersReading(RIGHT_ANSWERS, STUDENT_ANSWERS, compareAnswers));
