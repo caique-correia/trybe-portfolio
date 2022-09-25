@@ -156,3 +156,45 @@ const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 // console.log(searchKey(lesson2, 0));
 // console.log(verifyPairing(lesson2, 'materia', 'História'));
 // console.log(verifyPairing(lesson2, 'materia', 'Matemática'));
+
+// BONUS!;
+const mathStudentsCount = (list) => {
+  const keys = Object.keys(list);
+  let totalCount = 0
+  for (let i = 0; i < keys.length; i += 1) {
+    list[keys[i]].materia === 'Matemática' ? totalCount += Number(list[keys[i]].numeroEstudantes) : false;
+  }
+  return totalCount;
+}
+
+const classList = (list, professor) => {
+  const keys = Object.keys(list);
+  let subjectsList = [];
+  for (let i = 0; i < keys.length; i += 1) {
+    list[keys[i]].professor === professor ? subjectsList.push(list[keys[i]].materia) : false;
+  }
+  return subjectsList;
+};
+
+const studentsProfessor = (list, professor) => {
+  const keys = Object.keys(list);
+  let totalCount = 0
+  for (let i = 0; i < keys.length; i += 1) {
+    list[keys[i]].professor === professor ? totalCount += Number(list[keys[i]].numeroEstudantes) : false;
+  }
+  return totalCount;
+};
+
+const professorApply = (list, professor) => {
+  const keys = Object.keys(list);
+  for (let i = 0; i < keys.length; i += 1) {
+    if (list[keys[i]].professor === professor) {
+      return ({
+        professor: (list[keys[i]].professor), aulas: classList(list, professor), estudantes: studentsProfessor(list, professor),
+      })
+    }
+  }
+};
+
+console.log(mathStudentsCount(allLessons));
+console.log(professorApply(allLessons, 'Carlos Jesus'));
