@@ -103,4 +103,56 @@ const orderModifier = (order) => {
   ${flavors[0]}, ${flavors[1]} e ${order.order.drinks.coke.type} é R$${newPrice},00.`
 };
 
-console.log(orderModifier(order));
+// console.log(orderModifier(order));
+
+// PART III;
+const lesson1 = {
+  materia: 'Matemática',
+  numeroEstudantes: 20,
+  professor: 'Maria Clara',
+  turno: 'manhã',
+};
+
+const lesson2 = {
+  materia: 'História',
+  numeroEstudantes: 20,
+  professor: 'Carlos Jesus',
+};
+
+const lesson3 = {
+  materia: 'Matemática',
+  numeroEstudantes: 10,
+  professor: 'Maria Clara',
+  turno: 'noite',
+};
+
+const addNewKey = (object, key, value) => object.key = value;
+const listKeys = (object) => Object.keys(object);
+const listValues = (object) => Object.keys(object);
+const objectLength = (object) => listKeys(object).length;
+
+const studentCount = (list) => {
+  const lessons = Object.keys(list);
+  let totalStudents = 0
+  for (let i = 0; i < lessons.length; i += 1) {
+    let actualLesson = lessons[i];
+    totalStudents += Number(list[actualLesson].numeroEstudantes);
+  }
+  return totalStudents;
+};
+
+const searchKey = (object, position) => Object.values(object)[position];
+
+const verifyPairing = (object, key, value) => object[key] === value ? true : false
+
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
+
+// console.log(lesson2);
+// console.log(addNewKey(lesson2, 'turno', 'noite'));
+// console.log(listKeys(lesson2), listValues(lesson2));
+// console.log(objectLength(lesson2));
+// console.log(allLessons);
+// console.log(studentCount(allLessons));
+// console.log(searchKey(lesson2, 0));
+// console.log(verifyPairing(lesson2, 'materia', 'História'));
+// console.log(verifyPairing(lesson2, 'materia', 'Matemática'));
