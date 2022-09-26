@@ -5,5 +5,7 @@ Finalização do primeiro projeto e inicialização em
 Finalização do segundo projeto e feriados;
 04/09/22:
 Progresso massivo em atividades;
-12/07/22:
+12/09/22:
 Complex deals;
+25/09/22:
+Progresso massivo em atividades;
