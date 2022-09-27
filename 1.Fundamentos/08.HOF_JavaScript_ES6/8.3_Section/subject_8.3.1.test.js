@@ -54,20 +54,12 @@ describe('Teste "booksGenre" baseada em "books"', () => {
 
 describe('Teste "booksAge" baseada em "books"', () => {
   it('Verifica livros com, pelo menos, 60 anos de lançamento, decrescentemente', () => {
-    expect(booksAge(booksReduced)).toEqual([
-      {
-        id: 2,
-        name: 'O Senhor dos Anéis',
-        genre: 'Fantasia',
-        author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
-        releaseYear: 1954,
-      },
-    ]);
+    expect(booksAge(booksReduced)).toEqual([ 'O Senhor dos Anéis' ]);
   });
 });
 
 describe('Teste "booksSignature" baseada em "books"', () => {
   it('Verifica autor cuja assinatura inicia com três iniciais', () => {
-    expect(booksSignature(booksReduced)).toBe('J. R. R. Tolkien');
+    expect(booksSignature(booksReduced)).toBe('O Senhor dos Anéis');
   })
 })

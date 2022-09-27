@@ -75,16 +75,16 @@ const booksAuthors = (bookList) => {
 
 const booksGenre = (bookList) => bookList.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica').sort((a, b) => a.name.localeCompare(b.name));
 
-const booksAge = (bookList) => bookList.filter((book) => Number(book.releaseYear) + 60 <= 2022).sort((a, b) => a.releaseYear - b.releaseYear);
+const booksAge = (bookList) => bookList.filter((book) => Number(book.releaseYear) + 60 <= 2022).map((element) => element.name);
 
-const booksSignature = (bookList) => bookList.find((book) => book.author.name.split(' ').filter((piece) => piece.endsWith('.')).length === 3).author.name;
+const booksSignature = (bookList) => bookList.find((book) => book.author.name.split(' ').filter((piece) => piece.endsWith('.')).length === 3).name;
 
 // const booksSignature = (bookList) => {
 //   const first = bookList.map((book) => book.author.name.split('. ').filter((piece, index) => piece.length === 1 && index < 3));
 //   return first.filter((e) => e.length === 3)
 // }
 
-console.log(booksSignature(books));
+console.log(booksAge(books));
 
 module.exports = {
   booksInfo,
