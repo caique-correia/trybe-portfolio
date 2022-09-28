@@ -74,6 +74,9 @@ const names = [
   'Abeladerco', 'Adieidy', 'Alarucha',
 ];
 
+const students = ['Pedro Henrique', 'Miguel', 'Maria Clara'];
+const grades = [[9, 8, 10, 7, 5], [10, 9, 9, 10, 8], [10, 7, 10, 8, 9]];
+
 // QUESTION 1;
 function flatten(matrix) {
   return matrix.reduce((a, b) => a.concat(b));
@@ -113,16 +116,27 @@ function containsA(bookList) {
   return bookList.reduce((a, b) => a + b).toLowerCase().split('a').length - 1;
 }
 
-console.log(containsA(names));
+// QUESTION 4;
+function studentAverage(classList, gradeList) {
+  return classList.map((a, b) => {
+    const actualAverage = gradeList[b].reduce((c, d) => c + d);
+    return ({ name: a , average: actualAverage / (gradeList[b].length) });
+  });
+};
+
+console.log(studentAverage(students, grades));
 
 // TEST EXPORT;
 module.exports = {
   arrays,
   books,
   names,
+  students,
+  grades,
   flatten,
   reduceNames,
   averageAge,
   longestNamedBook,
   containsA,
+  studentAverage,
 };
