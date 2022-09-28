@@ -31,3 +31,44 @@ const presentation = (userList, jobIbnfosList) => {
 };
 
 // console.log(presentation(user, jobInfos));
+
+//ARRAY DESTRUCTURING;
+// FIRST;
+const saudacoes = ['Olá', (saudacao) => console.log(saudacao)];
+const [salute, message] = saudacoes;
+
+// saudacoes[1](saudacoes[0]); // Anterior
+// message(salute); // Posterior
+
+// SECOND;
+let comida = 'gato';
+let animal = 'água';
+let bebida = 'arroz';
+
+[comida, animal, bebida] = [bebida, comida, animal];
+
+// console.log(comida, animal, bebida);
+
+// THIRD;
+let numerosPares = [1, 3, 5, 6, 8, 10, 12];
+
+[,,, ...numerosPares] = numerosPares;
+
+// console.log(numerosPares);
+
+// DEFAULT DESTRUCTURING;
+const getNationality = ({ firstName, nationality = 'Brazilian' }) => `${firstName} is ${nationality}`;
+
+const person = {
+  firstName: 'João',
+  lastName: 'Jr II',
+};
+
+const otherPerson = {
+  firstName: 'Ivan',
+  lastName: 'Ivanovich',
+  nationality: 'Russian',
+};
+
+console.log(getNationality(otherPerson));
+console.log(getNationality(person));
