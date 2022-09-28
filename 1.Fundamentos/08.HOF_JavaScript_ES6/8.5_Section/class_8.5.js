@@ -72,3 +72,13 @@ const otherPerson = {
 
 console.log(getNationality(otherPerson));
 console.log(getNationality(person));
+
+// OBJECT PROPERTY SHORTHAND;
+const getPosition = (latitude, longitude) => ({ latitude, longitude, });
+
+// console.log(getPosition(-19.8157, -43.9542));
+
+// DEFAULT PARAMETERS;
+const multiply = (number = 1, value = 1) => number * value;
+
+// console.log(multiply(8));
