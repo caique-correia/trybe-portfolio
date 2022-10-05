@@ -55,10 +55,33 @@ function decode(text) {
 
 // QUESTION 5;
 
+function techList(abilities, name) {
+  if (abilities.length === 0) { return 'Vazio!'; }
+  abilities.sort();
+  const answer = [];
+  abilities.forEach((skill) => {
+    answer.push({
+      tech: skill,
+      name,
+    });
+  }); return answer;
+}
+
+// QUESTION 6; 
+function hydrate(request) {
+  let answer = 0;
+  const process = request.split(' ').forEach((n) => {
+    if (!isNaN(Number(n))) { answer += Number(n) }
+  }); if (answer === 1) { return `${answer} copo de água` };
+  return `${answer} copos de água`
+}
+
 module.exports = {
   sum,
   myRemove,
   myFizzBuzz,
   encode,
   decode,
+  techList,
+  hydrate,
 }
