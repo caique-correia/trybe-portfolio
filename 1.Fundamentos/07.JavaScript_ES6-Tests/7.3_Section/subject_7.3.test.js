@@ -1,5 +1,5 @@
 const {
-  sum, myRemove, myFizzBuzz,
+  sum, myRemove, myFizzBuzz, encode, decode,
 } = require('./subject_7.3');
 
 describe('Question 1', () => {
@@ -48,8 +48,23 @@ describe('Question 3', () => {
 });
 
 describe('Question 4', () => {
-  it('', () => {
-    expect().toBe();
+  it('Encode & Decode are functions', () => {
+    expect(typeof encode).toBe('function');
+    expect(typeof decode).toBe('function');
+  });
+  it('Vogals to numbers', () => {
+    expect(encode('a, e, i, o, u')).toMatch('1, 2, 3, 4, 5');
+  });
+  it('Numbers to vogals', () => {
+    expect(decode('1, 2, 3, 4, 5')).toMatch('a, e, i, o, u');
+  });
+  it('Only vogals converted', () => {
+    expect(encode('jester')).toMatch('j2st2r');
+    expect(decode('h3s4k1')).toMatch('hisoka');
+  });
+  it('To match length', () => {
+    expect(encode('toMatchLength').length).toBe(13);
+    expect(decode('t4M1tchL2ngth').length).toBe(13);
   });
 });
 
