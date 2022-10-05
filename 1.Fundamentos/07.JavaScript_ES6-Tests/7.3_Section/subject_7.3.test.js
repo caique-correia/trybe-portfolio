@@ -1,5 +1,5 @@
 const {
-  sum, myRemove,
+  sum, myRemove, myFizzBuzz,
 } = require('./subject_7.3');
 
 describe('Question 1', () => {
@@ -29,14 +29,38 @@ describe('Question 2', () => {
   });
 });
 
-// describe('Question 3', () => {
-//   it('', () => {
-//     expect(myRemove()).toBe();
-//   });
-//   it('', () => {
-//     expect(myRemove()).toBe();
-//   });
-//   it('', () => {
-//     expect(myRemove()).toBe();
-//   });
-// });
+describe('Question 3', () => {
+  it('Expect FizzBuzz', () => {
+    expect(myFizzBuzz(15)).toMatch('fizzbuzz');
+  });
+  it('Expect Fizz', () => {
+    expect(myFizzBuzz(9)).toMatch('fizz');
+  });
+  it('Expect Buzz', () => {
+    expect(myFizzBuzz(10)).toMatch('buzz');
+  });
+  it('Expect Num', () => {
+    expect(myFizzBuzz(4)).toBe(4);
+  });
+  it('Expect False', () => {
+    expect(myFizzBuzz('15')).toBeFalsy();
+  });
+});
+
+describe('Question 4', () => {
+  it('', () => {
+    expect().toBe();
+  });
+});
+
+describe('Question 5', () => {
+  it('', () => {
+    expect().toBe();
+  });
+});
+
+describe('Question 6', () => {
+  it('', () => {
+    expect().toBe();
+  });
+});
