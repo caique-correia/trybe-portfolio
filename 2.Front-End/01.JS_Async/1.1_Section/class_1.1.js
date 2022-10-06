@@ -59,12 +59,6 @@ const getCountry = (onSuccess /* segundoParametro */) => {
   }, delay());
 };
 
-// Deve imprimir:
-//  - Em caso de sucesso: "O país retornado é Brasil"
-//  - Em caso de erro: "Erro ao selecionar país: País não encontrado"
-getCountry(countryName, printErrorMessage);
+// getCountry(countryName, printErrorMessage);
+// getCountry(countryCurrency, printErrorMessage);
 
-// Deve imprimir:
-//  - Em caso de sucesso: "A moeda corrente do Brasil é Real"
-//  - Em caso de erro: "Erro ao selecionar país: País não encontrado"
-getCountry(countryCurrency, printErrorMessage);
