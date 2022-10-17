@@ -85,13 +85,12 @@ const defineMageDamage = (intelligence) => {
 };
 
 const handleMageTurn = ({ intelligence, mana }) => {
+  const mageTurn = { dealtDamage: 0, spentMana: 'Insufficient Mana!' }
+
   if (mana >= 15) {
-    const mageTurn = {
-      dealtDamage: defineMageDamage(intelligence),
-      spentMana: 15,
-    };
-    return mageTurn;
-  } throw new Error('Mana insuficiente!')
+    mageTurn.dealtDamage = defineMageDamage(intelligence);
+    mageTurn.spentMana = 15;
+  }; return mageTurn;
 };
 
 // PART II;
@@ -118,7 +117,7 @@ const gameActions = {
     const { dealtDamage, spentMana } = CBM(mage);
     dragon.healthPoints -= dealtDamage;
     mage.damage = dealtDamage;
-    mage.mana -= spentMana;
+    typeof spentMana === 'string' ? mage.mana = spentMana : mage.mana -= spentMana;
   },
   dragonTurn: (CBD) => {
     dragon.damage = CBD(dragon);
