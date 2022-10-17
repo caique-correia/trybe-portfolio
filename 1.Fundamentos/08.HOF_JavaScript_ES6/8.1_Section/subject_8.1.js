@@ -42,7 +42,92 @@ const answersReading = (rightAnswers, studentAnswers, callback) => {
   return result;
 };
 
-console.log(answersReading(RIGHT_ANSWERS, STUDENT_ANSWERS, compareAnswers));
+// console.log(answersReading(RIGHT_ANSWERS, STUDENT_ANSWERS, compareAnswers));
 
 // BONUS - GAME ACTIONS SIMULATOR;
 // PART I;
+const mage = {
+  healthPoints: 130,
+  intelligence: 45,
+  mana: 125,
+  damage: undefined,
+};
+
+const warrior = {
+  healthPoints: 200,
+  strength: 30,
+  weaponDmg: 2,
+  damage: undefined,
+};
+
+const dragon = {
+  healthPoints: 350,
+  strength: 50,
+  damage: undefined,
+};
+
+const battleMembers = { mage, warrior, dragon };
+
+const defineDragonDamage = ({ strength }) => {
+  const damageDragon = Math.floor(Math.random() * (strength - 14) + 15);
+  return damageDragon;
+};
+
+const defineWarriorDamage = ({ strength, weaponDmg }) => {
+  const damageWarrior = Math.floor(Math
+    .random() * ((strength * weaponDmg) - strength + 1) + strength);
+  return damageWarrior;
+};
+
+const defineMageDamage = (intelligence) => {
+  const damageMage = Math.floor(Math.random() * (intelligence + 1) + intelligence);
+  return damageMage;
+};
+
+const handleMageTurn = ({ intelligence, mana }) => {
+  const mageTurn = { dealtDamage: 0, spentMana: 'Insufficient Mana!' }
+
+  if (mana >= 15) {
+    mageTurn.dealtDamage = defineMageDamage(intelligence);
+    mageTurn.spentMana = 15;
+  }; return mageTurn;
+};
+
+// PART II;
+const gameActionsF = ({ mage, warrior, dragon }, CBW, CBM, CBD) => {
+  warrior.damage = CBW(warrior);
+  dragon.healthPoints -= warrior.damage;
+
+  const { dealtDamage, spentMana } = CBM(mage);
+  dragon.healthPoints -= dealtDamage;
+  mage.damage = dealtDamage;
+  mage.mana -= spentMana;
+
+  dragon.damage = CBD(dragon);
+  warrior.healthPoints -= dragon.damage;
+  mage.healthPoints -= dragon.damage;
+};
+
+const gameActions = {
+  warriorTurn: (CBW) => {
+    warrior.damage = CBW(warrior);
+    dragon.healthPoints -= warrior.damage;
+  },
+  mageTurn: (CBM) => {
+    const { dealtDamage, spentMana } = CBM(mage);
+    dragon.healthPoints -= dealtDamage;
+    mage.damage = dealtDamage;
+    typeof spentMana === 'string' ? mage.mana = spentMana : mage.mana -= spentMana;
+  },
+  dragonTurn: (CBD) => {
+    dragon.damage = CBD(dragon);
+    warrior.healthPoints -= dragon.damage;
+    mage.healthPoints -= dragon.damage;
+  },
+  endRound: () => battleMembers,
+};
+
+gameActions.warriorTurn(defineWarriorDamage);
+gameActions.mageTurn(handleMageTurn);
+gameActions.dragonTurn(defineDragonDamage);
+console.log(gameActions.endRound());
