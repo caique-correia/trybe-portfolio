@@ -1,44 +1,25 @@
 import React from 'react';
 import './App.css';
-import Album from './Album';
-// import Image from './Image';
-// import cute_cat_staring from './Images/cute_cat_staring.jpg'
+import cute_cat_staring from './Images/cute_cat_staring.jpg'
+import Data from './Development/Data'
+import Image from './Development/Image';
+import Album from './Development/Album';
+import UserProfile from './Development/UserProfile';
 
 class App extends React.Component {
   render() {
-    const album01 = {
-      image: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Coldplay_-_Mylo_Xyloto_%28Official_Album_Cover%29.png/220px-Coldplay_-_Mylo_Xyloto_%28Official_Album_Cover%29.png',
-      title: 'Mylo Xyloto',
-      releaseDate: {
-        year: '2011',
-        month: '10',
-        day: '24',
-      },
-      others: {
-        recordCompany: 'Capitol, Parlophone',
-        formats: 'CD, digital'
-      }
-    };
-
-    const album02 = {
-      image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/5/5d/Coldplay_-_Ghost_Stories.jpg/220px-Coldplay_-_Ghost_Stories.jpg',
-      title: 'Ghost Stories',
-      releaseDate: {
-        year: '2014',
-        month: '05',
-        day: '16',
-      },
-      others: {
-        recordCompany: 'Parlophone',
-        formats: 'CD, digital'
-      }
-    };
-
+    const {album01, album02, users} = Data;
     return (
-      <div>
-        <Album album={ album01 } />
-        <Album album={ album02 } />
-      </div>
+      <>
+      <Image source={ cute_cat_staring } alternativeText="Cute cat staring" />
+        <div>
+          <Album album={album01} />
+          <Album album={album02} />
+        </div>
+        <div className="App">
+          {users.map((user, index) => <UserProfile key={index} user={user} />)}
+        </div>
+      </>
     );
   }
 }
