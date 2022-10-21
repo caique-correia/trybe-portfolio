@@ -11,3 +11,5 @@ Complex deals;
 Progresso massivo em atividades;
 09/10/22:
 Front End, 1.2, git clone JS Async;
+21/10/22:
+Up to date;
