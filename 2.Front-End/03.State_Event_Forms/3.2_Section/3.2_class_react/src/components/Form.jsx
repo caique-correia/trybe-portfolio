@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import '../style/Form.css'
+import FormSelect from './FormSelect';
+import FormField from './FormField';
+import FormCheckbox from './FormCheckbox';
 
 class Form extends Component {
   constructor() {
@@ -11,67 +14,44 @@ class Form extends Component {
       age: 0,
       PS: '',
       check: false,
+      error: false,
     };
   }
+
+  handleError = (bool) => this.setState({ error: bool });
 
   handleChanges = ({ target: { name, value, type, checked } }) => {
     const setValue = type === 'checkbox' ? checked : value
     this.setState({ [name]: setValue });
+    const { PS } = this.state;
+    if (PS.length > 60) {
+      this.handleError(true);
+    } else {
+      this.handleError(false);
+    }
   };
 
   render() {
-    const { choice, name, age, PS, check } = this.state;
+    const { choice, name, age, PS, check, error } = this.state;
     return (
       <div>
         <h1>ToFixOne;</h1>
         <form className="form">
-          <fieldset>
-            <label>
-              Choose:
-              <select name="choice" value={choice} onChange={this.handleChanges}>
-                <option value="Default"></option>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Blue">Blue</option>
-              </select>
-            </label>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={this.handleChanges}
-              />
-            </label>
-            <label>
-              Age:
-              <input
-                type="number"
-                name="age"
-                value={age}
-                onChange={this.handleChanges}
-              />
-            </label>
-            <label>
-              P.S.:
-              <textarea
-                name="PS"
-                value={PS}
-                onChange={this.handleChanges}
-              />
-            </label>
-          </fieldset>
-          <label>
-            Allow?
-            <input
-              type="checkbox"
-              name="check"
-              value={check}
-              onChange={this.handleChanges}
-            />
-          </label>
-          <input type="file" />
+          <FormSelect
+            value={choice}
+            onChange={this.handleChanges} />
+          <FormField
+            valueName={name}
+            valueAge={Number(age)}
+            valuePS={PS}
+            onChange={this.handleChanges}
+            setError={error}
+            onError={this.handleError}
+          />
+          <FormCheckbox
+            value={check}
+            onChange={this.handleChanges} />
+          <input className="outside" type="file" />
         </form>
       </div>
     );
