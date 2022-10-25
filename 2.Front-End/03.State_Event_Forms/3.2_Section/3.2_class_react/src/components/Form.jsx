@@ -6,59 +6,41 @@ class Form extends Component {
     super();
 
     this.state = {
-      // choiceState: '',
-      nameState: '',
-      ageState: 0,
-      PSState: '',
+      choice: '',
+      name: '',
+      age: 0,
+      PS: '',
+      check: false,
     };
   }
 
-  // handleChoice = (event) => {
-  //   this.setState({
-  //     choiceState: event.target.value,
-  //   });
-  // }
-
-  handleName = (event) => {
-    this.setState({
-      nameState: event.target.value,
-    });
-  }
-
-  handleAge = (event) =>  {
-    this.setState({
-      ageState: event.target.value,
-    });
-  }
-
-  handlePS = (event) => {
-    this.setState({
-      PSState: event.target.value,
-    });
-  }
+  handleChanges = ({ target: { name, value, type, checked } }) => {
+    const setValue = type === 'checkbox' ? checked : value
+    this.setState({ [name]: setValue });
+  };
 
   render() {
-    const { nameState, ageState, PSState } = this.state;
+    const { choice, name, age, PS, check } = this.state;
     return (
       <div>
         <h1>ToFixOne;</h1>
         <form className="form">
           <label>
             Choose:
-            <input
-              type="checkbox"
-              name="choice"
-              // value={choiceState}
-              // onChange={this.handleChoice}
-            />
+            <select name="choice" value={choice} onChange={this.handleChanges}>
+              <option value="Default"></option>
+              <option value="Red">Red</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+            </select>
           </label>
           <label>
             Name:
             <input
               type="text"
               name="name"
-              value={nameState}
-              onChange={this.handleName}
+              value={name}
+              onChange={this.handleChanges}
             />
           </label>
           <label>
@@ -66,16 +48,24 @@ class Form extends Component {
             <input
               type="number"
               name="age"
-              value={ageState}
-              onChange={this.handleAge}
+              value={age}
+              onChange={this.handleChanges}
             />
           </label>
           <label>
             P.S.:
             <textarea
               name="PS"
-              value={PSState}
-              onChange={this.handlePS}
+              value={PS}
+              onChange={this.handleChanges}
+            />
+          </label>
+          <label>
+            <input
+            type="checkbox"
+            name="check"
+            value={check}
+            onChange={this.handleChanges}
             />
           </label>
         </form>
