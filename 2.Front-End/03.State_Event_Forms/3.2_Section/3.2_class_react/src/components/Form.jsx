@@ -25,49 +25,53 @@ class Form extends Component {
       <div>
         <h1>ToFixOne;</h1>
         <form className="form">
+          <fieldset>
+            <label>
+              Choose:
+              <select name="choice" value={choice} onChange={this.handleChanges}>
+                <option value="Default"></option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+              </select>
+            </label>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={this.handleChanges}
+              />
+            </label>
+            <label>
+              Age:
+              <input
+                type="number"
+                name="age"
+                value={age}
+                onChange={this.handleChanges}
+              />
+            </label>
+            <label>
+              P.S.:
+              <textarea
+                name="PS"
+                value={PS}
+                onChange={this.handleChanges}
+              />
+            </label>
+          </fieldset>
           <label>
-            Choose:
-            <select name="choice" value={choice} onChange={this.handleChanges}>
-              <option value="Default"></option>
-              <option value="Red">Red</option>
-              <option value="Green">Green</option>
-              <option value="Blue">Blue</option>
-            </select>
-          </label>
-          <label>
-            Name:
+            Allow?
             <input
-              type="text"
-              name="name"
-              value={name}
+              type="checkbox"
+              name="check"
+              value={check}
               onChange={this.handleChanges}
             />
           </label>
-          <label>
-            Age:
-            <input
-              type="number"
-              name="age"
-              value={age}
-              onChange={this.handleChanges}
-            />
-          </label>
-          <label>
-            P.S.:
-            <textarea
-              name="PS"
-              value={PS}
-              onChange={this.handleChanges}
-            />
-          </label>
-          <label>
-            <input
-            type="checkbox"
-            name="check"
-            value={check}
-            onChange={this.handleChanges}
-            />
-          </label>
+          <input type="file" />
         </form>
       </div>
     );
