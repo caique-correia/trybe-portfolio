@@ -1,4 +1,5 @@
 import React from 'react';
+import RenderJoke from './RenderJoke';
 
 class DadJoke extends React.Component {
   constructor() {
@@ -14,29 +15,39 @@ class DadJoke extends React.Component {
   }
 
   async fetchJoke() {
-    const requestHeaders = { headers: { Accept: 'application/json' } }
-    const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
-    const requestObject = await requestReturn.json();
-    this.setState({
-      jokeObj: requestObject,
+    this.setState({ loading: true }, async () => {
+      const requestHeaders = { headers: { Accept: 'application/json' } }
+      const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
+      const requestObject = await requestReturn.json();
+      this.setState({
+        jokeObj: requestObject,
+        loading: false,
+      })
     })
   }
 
-  componentDidMount() {
+  saveJoke() {
+    this.setState(({ jokeObj, storedJokes }) => ({ storedJokes: [...storedJokes, jokeObj] }))
     this.fetchJoke();
   }
 
-  saveJoke() {}
+  componentDidMount() {
+    console.log('mount')
+    this.fetchJoke();
+  }
 
   render() {
-    const { storedJokes } = this.state;
-    // const loadingElement = <span>Loading...</span>;
+    const { jokeObj, loading, storedJokes } = this.state;
+    const loadingElement = <span>Loading...</span>;
 
     return (
       <div>
         <span>
           {storedJokes.map(({ id, joke }) => (<p key={id}>{joke}</p>))}
         </span>
+        {loading
+          ? loadingElement
+          : <RenderJoke jokeObj={jokeObj} saveJoke={this.saveJoke} />}
       </div>
     );
   }
