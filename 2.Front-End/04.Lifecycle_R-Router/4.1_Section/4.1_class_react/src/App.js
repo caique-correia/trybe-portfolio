@@ -6,10 +6,10 @@ import DadJoke from './components/DadJoke';
 class App extends Component {
   render() {
     return (
-      <main>
+      <>
         {/* <RickMorty /> */}
         <DadJoke />
-      </main>
+      </>
     );
   }
 }

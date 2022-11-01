@@ -32,7 +32,6 @@ class DadJoke extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mount')
     this.fetchJoke();
   }
 
@@ -41,14 +40,14 @@ class DadJoke extends React.Component {
     const loadingElement = <span>Loading...</span>;
 
     return (
-      <div>
+      <main>
         <span>
           {storedJokes.map(({ id, joke }) => (<p key={id}>{joke}</p>))}
         </span>
         {loading
           ? loadingElement
           : <RenderJoke jokeObj={jokeObj} saveJoke={this.saveJoke} />}
-      </div>
+      </main>
     );
   }
 }
