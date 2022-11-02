@@ -13,6 +13,11 @@ class App extends Component {
     this.fetchUser();
   }
 
+  shouldComponentUpdate(nextProp, nextState) {
+    const obj = nextState.fetchObj;
+    return !obj || obj.dob.age <= 50
+  }
+
   fetchUser = () => {
     this.setState({ loading: true }, async () => {
       const URL = 'https://api.randomuser.me/'
@@ -26,7 +31,13 @@ class App extends Component {
   }
 
   newUserBtn = () => {
-    this.setState(({ fetchObj, userList }) => ({ userList: [...userList, fetchObj] }));
+    const { fetchObj } = this.state;
+    if (fetchObj) {
+      const age = fetchObj.dob.age;
+      if (age <= 50) {
+        this.setState(({ fetchObj, userList }) => ({ userList: [...userList, fetchObj] }))
+      }
+    }
     this.fetchUser();
   }
 

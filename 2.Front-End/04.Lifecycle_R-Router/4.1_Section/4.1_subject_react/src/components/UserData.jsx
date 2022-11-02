@@ -4,7 +4,7 @@ class UserData extends Component {
   render() {
     const { userObj } = this.props;
     const {
-      dob: { age }, email, name: { title, first, last }, picture: { medium }
+      dob: { age }, email, name: { title, first, last }, picture: { medium },
     } = userObj;
 
     // const newUser = (
