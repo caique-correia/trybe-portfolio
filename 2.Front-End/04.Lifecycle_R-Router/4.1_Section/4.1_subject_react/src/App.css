@@ -1,0 +1,10 @@
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: baseline;
+}
+
+li {
+  width: 20%;
+  min-width: 250px;
+}
