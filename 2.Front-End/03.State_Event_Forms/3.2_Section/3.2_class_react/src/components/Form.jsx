@@ -24,11 +24,7 @@ class Form extends Component {
     const setValue = type === 'checkbox' ? checked : value
     this.setState({ [name]: setValue });
     const { PS } = this.state;
-    if (PS.length > 60) {
-      this.handleError(true);
-    } else {
-      this.handleError(false);
-    }
+    this.handleError(PS.length > 60);
   };
 
   render() {
