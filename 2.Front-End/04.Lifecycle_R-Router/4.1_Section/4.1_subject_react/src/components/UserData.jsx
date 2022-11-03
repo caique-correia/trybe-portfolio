@@ -19,8 +19,10 @@ class UserData extends Component {
       (
         <>
           <img src={medium} alt="Foto de Perfil" />
+          <div>
           <p>{`${title}. ${first} ${last}, ${age}`}</p>
           <p>{email}</p>
+          </div>
         </>
       )
     )

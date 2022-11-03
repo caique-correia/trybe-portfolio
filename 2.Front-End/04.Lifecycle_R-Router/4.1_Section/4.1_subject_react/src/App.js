@@ -23,10 +23,12 @@ class App extends Component {
       const URL = 'https://api.randomuser.me/'
       const request = await fetch(URL);
       const response = await request.json();
-      this.setState({
+      response.results[0].dob.age <= 50
+      ? this.setState({
         fetchObj: response.results[0],
         loading: false,
       })
+      : this.fetchUser();
     })
   }
 
@@ -43,8 +45,12 @@ class App extends Component {
 
   render() {
     const { fetchObj, loading, userList } = this.state;
+    
     return (
       <>
+        <button type='button' onClick={this.newUserBtn}>
+          New User
+        </button>
         <ul>
           {userList.map((userObj) => <li key={userObj.login.uuid} >
             <UserData userObj={userObj} /></li>)}
@@ -52,9 +58,6 @@ class App extends Component {
             ? <li>Carregando...</li>
             : <li key={fetchObj.login.uuid}><UserData userObj={fetchObj} /></li>}
         </ul>
-        <button type='button' onClick={this.newUserBtn}>
-          New User
-        </button>
       </>
     );
   }
