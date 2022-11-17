@@ -1,0 +1,24 @@
+.form , fieldset {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+fieldset {
+  display: flex;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 5px;
+}
+
+.outside {
+  display: inline-block;
+  text-align: center;
+  
+}
