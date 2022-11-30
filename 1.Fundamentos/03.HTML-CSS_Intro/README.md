@@ -1,2 +1,0 @@
-Subject modification;
-Preferences adaptation; 
