@@ -1,15 +1,34 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { actionSum, actionReset } from '../redux/Store'
 
 class Counter extends Component {
   render() {
-    const { countState } = this.props;
+    const { dispatch, countState } = this.props;
     return (
       <>
-        <h1>Counter Activite</h1>
+        <h1>Counter Activity</h1>
         <h2>{countState}</h2>
-        <button id='add1' type='button'>+1</button>
-        <button id='add5' type='button'>+5</button>
+        <button
+          type='button'
+          onClick={() => dispatch(actionSum(1))}
+        >+1</button>
+        <button
+          type='button'
+          onClick={() => dispatch(actionSum(5))}
+        >+5</button>
+        <button
+          type='button'
+          onClick={() => dispatch(actionSum(-1))}
+        >-1</button>
+        <button
+          type='button'
+          onClick={() => dispatch(actionSum(-5))}
+        >-5</button>
+        <button
+          type='button'
+          onClick={() => dispatch(actionReset())}
+        >Reset</button>
       </>
     );
   }
