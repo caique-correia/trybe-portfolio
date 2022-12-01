@@ -1,10 +1,12 @@
 import { Component } from 'react';
-import Counter from './components/Counter'
+import Counter from './pages/Counter'
 
 class App extends Component {
   render() {
     return (
-      <Counter />
+      <main>
+        <Counter />
+      </main>
     );
   }
 }
