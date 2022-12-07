@@ -4,7 +4,8 @@ const INITIAL_STATE = {
 
 const selectedPill = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    // implemente aqui
+    case 'MATRIX_PILL':
+      return { ...state, id: action.payload }
     default:
       return state;
   }
