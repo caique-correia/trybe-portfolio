@@ -14,14 +14,14 @@ class SelectOmega extends React.Component {
           <h2>Selecione o mutante nível Ômega</h2>
           <div>
             <select
-            // onChange={ Implemente o dispatch da action selectMutant }
+            onChange={ console.log('a', this) }
             >
               <MutantOptions />
             </select>
             <div>
               <button
                 type="button"
-                // onClick={ Implemente o dispatch da action `showMutant` }
+                onClick={ () => dispatch(showMutant()) }
               >
                 Selecionar
               </button>
@@ -31,8 +31,8 @@ class SelectOmega extends React.Component {
             Nível Ômega: Habilidade super desenvolvida que alcançou um nível
             insuperável na classificação da habilidade.
           </p>
-        </div>
-      </div>
+        </div >
+      </div >
     );
   }
 }
