@@ -6,7 +6,7 @@ import '../style/style.css';
 class App extends Component {
   render() {
     const { isFetching, imageURL, dispatch } = this.props;
-    if (isFetching) return <h2>Carregando...</h2>
+    if (isFetching) return <p>Carregando...</p>
     return (
       <>
         <button
