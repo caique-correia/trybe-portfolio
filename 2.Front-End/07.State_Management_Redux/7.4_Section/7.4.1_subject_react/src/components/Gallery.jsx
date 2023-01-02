@@ -49,7 +49,6 @@ class Gallery extends Component {
           }
 
           if (charInfo[key.toLowerCase()][0]) {
-            console.log(charInfo[key.toLowerCase()][0]);
             return (
               <ul key={`UL3. ${key}, ${i}`}>
                 {`${key}: `}
