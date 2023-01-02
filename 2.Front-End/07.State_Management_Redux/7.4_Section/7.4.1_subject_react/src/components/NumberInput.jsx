@@ -11,7 +11,7 @@ class NameInput extends Component {
   render() {
     const { charSearch } = this.props;
     return (
-    <label> {'Number: '}
+    <label> {'Character ID: '}
       <input
         type="number"
         value={charSearch}
