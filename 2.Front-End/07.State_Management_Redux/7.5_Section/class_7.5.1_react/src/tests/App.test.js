@@ -62,3 +62,14 @@ test('Reprodução de eventos com alteração de estado inicial', () => {
   userEvent.click(BTN5);
   expect(screen.getByText('11')).toBeInTheDocument();
 });
+
+test('Verificação da alteração dos estados a cada clique', () => {
+  const { store } = renderWithRedux(<App />);
+
+  expect(store.getState().counterReducer.count).toBe(0);
+
+  const BTN1 = screen.getByRole('button', { name: 'Incrementa 1' });
+  userEvent.click(BTN1);
+
+  expect(store.getState().counterReducer.count).toBe(1);
+});
