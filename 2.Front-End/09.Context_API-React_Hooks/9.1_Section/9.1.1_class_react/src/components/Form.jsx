@@ -76,6 +76,16 @@ function Form() {
         />
         Ciência da Computação
       </label>
+
+      <button
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+          console.log('Click!');
+        }}
+      >
+        Enviar
+      </button>
     </>
   )
 }
