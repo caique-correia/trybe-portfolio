@@ -7,9 +7,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <input type="text" placeholder="Full Name" />
-        <input type="number" placeholder="Age" />
-        <input type="text" placeholder="City" />
+        <input
+          type="text"
+          placeholder="Full Name"
+        />
+
+        <input
+          type="number"
+          placeholder="Age"
+        />
+
+        <input
+          type="text"
+          placeholder="City"
+        />
+
         <label htmlFor="Fundamentos">
           <input
             type="radio"
@@ -19,6 +31,7 @@ function App() {
           />
           Fundamentos
         </label>
+
         <label htmlFor="Front-end">
           <input
             type="radio"
@@ -28,6 +41,7 @@ function App() {
           />
           Front-end
         </label>
+
         <label htmlFor="Back-end">
           <input
             type="radio"
@@ -37,6 +51,7 @@ function App() {
           />
           Back-end
         </label>
+
         <label htmlFor="Ciência da Computação">
           <input
             type="radio"
@@ -46,6 +61,7 @@ function App() {
           />
           Ciência da Computação
         </label>
+
       </header>
     </div>
   );
