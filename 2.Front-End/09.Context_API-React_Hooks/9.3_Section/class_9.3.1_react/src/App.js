@@ -2,6 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import useFormInput from './hooks/useFormInput';
 import Input from './components/Input';
+import Button from './components/Button';
 import './styles/App.css';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
       }),
       'success'
     );
+
+    [firstName, lastName, email].forEach((e) => e.clear())
   }
 
   return (
@@ -44,7 +47,7 @@ function App() {
           onChange={email.onChange}
         />
         
-        <button type="submit">Submeter formulário</button>
+        <Button text="Submeter Formulário" type="submit" />
       </form>
     </div>
   );
