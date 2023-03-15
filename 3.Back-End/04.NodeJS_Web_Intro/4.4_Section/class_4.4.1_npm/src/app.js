@@ -1,6 +1,8 @@
 const express = require('express');
+require('express-async-errors');
 
 const app = express();
+const apiCredentials = require('./middlewares/apiCredentials');
 
 let nextId = 3;
 
@@ -9,6 +11,7 @@ const validateTeam = require('./middlewares/validateTeam');
 const existingId = require('./middlewares/existingId');
 
 app.use(express.json());
+app.use(apiCredentials);
 
 app.get('/teams', (req, res) => res.json(teams));
 
