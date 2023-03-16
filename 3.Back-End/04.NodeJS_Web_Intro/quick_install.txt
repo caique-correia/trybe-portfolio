@@ -5,5 +5,6 @@ npm i nodemon@2.0.15 --save-dev --save-exact
 npm i mocha@8.4.0 chai@4.3.4 --save-dev --save-exact
 npm i chai-http@4.3.0 --save-dev --save-exact
 npm i sinon@11.1.1 --save-dev --save-exact
+npm i express-async-errors@3.1.1 --save-dev --save-exact
 
-npm i eslint@6.8.0 eslint-config-trybe-backend@1.0.1 nodemon@2.0.15 mocha@8.4.0 chai@4.3.4 chai-http@4.3.0 sinon@11.1.1 --save-dev --save-exact
+npm i eslint@6.8.0 eslint-config-trybe-backend@1.0.1 nodemon@2.0.15 mocha@8.4.0 chai@4.3.4 chai-http@4.3.0 sinon@11.1.1 express-async-errors@3.1.1 --save-dev --save-exact
