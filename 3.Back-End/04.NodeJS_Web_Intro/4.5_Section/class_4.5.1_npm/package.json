@@ -1,0 +1,16 @@
+{
+  "name": "trybecash_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  }
+}
