@@ -16,9 +16,12 @@ services:
 
   database:
     image: mysql:8.0.29
-    restart: "no"
+    container_name: trybecash_db
+    restart: "always"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: trybecashdb
     ports:
-      - "33060:3306"
+      - "3306:3306"
+    volumes:
+      - ./trybecash_script.sql:/docker-entrypoint-initdb.d/trybecash_script.sql
