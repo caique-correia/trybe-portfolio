@@ -5,7 +5,7 @@ services:
       dockerfile: ./Dockerfile
       context: .
     container_name: trybecash_api
-    restart: "no"
+    restart: "always"
     working_dir: /app
     volumes:
       - ./:/app
@@ -21,7 +21,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: trybecashdb
-    ports:
-      - "3306:3306"
     volumes:
       - ./trybecash_script.sql:/docker-entrypoint-initdb.d/trybecash_script.sql
+    ports:
+      - "3306:3306"
