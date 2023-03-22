@@ -1,0 +1,11 @@
+{
+  "name": "class_5.1.1_bonus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CGC-98",
+  "license": "ISC"
+}
