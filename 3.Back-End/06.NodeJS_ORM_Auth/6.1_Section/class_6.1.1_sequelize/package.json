@@ -2,17 +2,24 @@
   "name": "class_6.1.1_sequelize",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "env $(cat .env) nodemon src/server.js",
+    "test": "mocha tests/**/*$NAME*.test.js --exit"
   },
   "author": "CGC-98",
   "license": "ISC",
   "devDependencies": {
-    "sequelize-cli": "6.2.0"
+    "chai": "4.3.4",
+    "chai-http": "4.3.0",
+    "mocha": "10.0.0",
+    "sequelize-cli": "6.2.0",
+    "sinon": "14.0.0"
   },
   "dependencies": {
+    "express": "4.17",
     "mysql2": "2.1.0",
+    "nodemon": "^2.0.22",
     "sequelize": "6.3.4"
   }
 }
