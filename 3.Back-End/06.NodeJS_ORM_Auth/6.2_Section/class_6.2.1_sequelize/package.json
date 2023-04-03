@@ -1,0 +1,18 @@
+{
+  "name": "class_6.2.1_sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.2.0",
+    "sequelize": "6.30.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
+  }
+}
