@@ -1,0 +1,20 @@
+{
+  "name": "class_8.2.2_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^16.18.23",
+    "typescript": "^5.0.4"
+  }
+}
