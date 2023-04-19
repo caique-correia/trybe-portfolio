@@ -1,0 +1,16 @@
+{
+  "name": "class_8.2.1_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "start:tsc": "npx tsc && node dist/index.js"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "typescript": "^5.0.4"
+  }
+}

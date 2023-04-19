@@ -1,0 +1,60 @@
+type Address = {
+  street: string,
+  number: number | null,
+}
+
+type User = {
+  name: string,
+  email: string,
+  password: string,
+}
+
+function stringToJson(str: string): unknown {
+  const result = JSON.parse(str);
+  return result;
+}
+
+const user = stringToJson('{"name":"André Soares","email":"andre@trybe.com","password":"senha_secreta"}') as User
+const address = <Address> stringToJson('{"street":"Rua Tamarindo","number":1}')
+
+user.name;
+address.street;
+
+const str: unknown = 'texto';
+(str as string).split('')
+
+const num: string = '2';
+(num as unknown) as number
+
+function genericStringToJson<Type>(str: string): Type {
+  const result = JSON.parse(str);
+  return result;
+}
+
+const genericUser = genericStringToJson<User>('{"name":"André Soares","email":"andre@trybe.com","password":"senha_secreta"}');
+const genericAddress = genericStringToJson<Address>('{"street":"Rua Tamarindo","number":1}')
+
+genericUser.name;
+genericAddress.street;
+
+function doubleGenericStringToJson<T, U>(str: string, id: U ): T & { id: U } {
+  const result = JSON.parse(str);
+  result.id = id;
+  return result;
+}
+
+const DGUser = doubleGenericStringToJson<User, number>('{"name":"André Soares","email":"andre@trybe.com","password":"senha_secreta"}', Date.now());
+const DGAddress = doubleGenericStringToJson<Address, string>('{"street":"Rua Tamarindo","number":1}', '#01')
+
+DGUser.id;
+DGAddress.id;
+
+function getArray<Type>(items : Type[]) : Type[] {
+  return new Array<Type>().concat(items);
+}
+
+const numberArray = getArray<number>([5, 10, 15, 20]);
+numberArray.push(25);
+
+const stringArray = getArray<string>(["Cats", "Dogs", "Birds"]);
+stringArray.push("Rabbits");
