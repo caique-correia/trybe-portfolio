@@ -9,8 +9,10 @@
   "author": "CGC-98",
   "license": "ISC",
   "dependencies": {
+    "@types/readline-sync": "^1.4.4",
     "express": "^4.18.2",
-    "mysql2": "^3.2.3"
+    "mysql2": "^3.2.3",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
