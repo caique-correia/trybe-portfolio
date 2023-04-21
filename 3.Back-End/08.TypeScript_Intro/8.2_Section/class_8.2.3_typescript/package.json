@@ -1,0 +1,22 @@
+{
+  "name": "class_8.2.3_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.15.13",
+    "mysql2": "^3.2.3",
+    "sequelize-cli": "^6.6.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/sequelize": "^4.28.14",
+    "sequelize": "^6.31.0"
+  }
+}
