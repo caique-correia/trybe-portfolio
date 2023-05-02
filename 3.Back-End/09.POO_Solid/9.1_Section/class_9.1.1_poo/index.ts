@@ -1,9 +1,9 @@
 class Tv {
-  brand: string;
-  size: number;
-  resulution: string;
-  connections: string[];
-  connectedTo?: string;
+  private _brand: string;
+  private _size: number;
+  private _resulution: string;
+  private _connections: string[];
+  private _connectedTo?: string;
 
   constructor (
     brand: string,
@@ -11,17 +11,30 @@ class Tv {
     resulution: string,
     connections: string[],
   ) {
-    this.brand = brand;
-    this.size = size;
-    this.resulution = resulution;
-    this.connections = connections;
+    this._brand = brand;
+    this._size = size;
+    this._resulution = resulution;
+    this._connections = connections;
   }
 
   turnOn() {
-    const strconn = this.connections.reduce((acc, cur, i) => i < this.connections.length - 1
+    const strconn = this._connections.reduce((acc, cur, i) => i < this._connections.length - 1
       ? `${acc}, ${cur}`
       : `${acc} and ${cur}`);
-    console.log(`${this.brand} TV, ${this.size} inches, ${this.resulution} with ${strconn} connections!`);
+    console.log(`${this._brand} TV, ${this._size} inches, ${this._resulution} with ${strconn} connections!`);
+  }
+
+  get connectedTo(): string | undefined {
+    return this._connectedTo;
+  }
+
+  set connectedTo(connection: string | undefined) {
+    if (!connection || this._connections.includes(connection)) {
+      this._connectedTo = connection;
+      console.log(connection);
+    } else {
+      console.log('Sorry, connection unavailable!');
+    }
   }
 }
 
