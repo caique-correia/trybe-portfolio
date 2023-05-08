@@ -1,0 +1,30 @@
+{
+  "name": "class_9.4.1_poo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register ./tests/**/*.{test,spec}.[t,j]s",
+    "lint": "eslint =c .eslintrc.json src/**/*[t,j]s"
+  },
+  "author": "CGC-98",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.1.1",
+    "@types/sinon": "^10.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "chai": "^4.3.7",
+    "eslint": "^8.40.0",
+    "eslint-config-trybe-backend": "^2.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-mocha": "^10.1.0",
+    "eslint-plugin-sonarjs": "^0.19.0",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
